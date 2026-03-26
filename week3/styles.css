@@ -83,3 +83,10 @@ strike {
 .highlight {
   background-color: yellow;
 }
+/*ul list style*/
+ul {
+  list-style: decimal;
+}
+article {
+  text-align: center;
+}
