@@ -62,7 +62,7 @@ body {
 }
 @media (width>=50em) {
   body {
-    background-color: blue;
+    background-color: lightblue;
   }
 }
 /*how to create padding around text*/
