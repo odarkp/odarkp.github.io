@@ -58,7 +58,7 @@ a:hover {
 }
 /*bg color changes based on website size*/
 body {
-  background-color: pink;
+  background-color: grey;
 }
 @media (width>=50em) {
   body {
