@@ -26,7 +26,8 @@ body {
   justify-content: center;
   align-items: center;
   /* flex-wrap: wrap; */
-  gap: 10px;
+  gap: 50px;
+  flex-wrap: wrap;
 }
 
 .limebox {
@@ -47,6 +48,6 @@ body {
   padding: 10px;
 }
 
-/* .outer > * {
+.outer > * {
   flex: 1;
-} */
+}
