@@ -31,3 +31,11 @@ span {
   display: block;
   color: lightpink;
 }
+ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}

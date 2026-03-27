@@ -31,6 +31,8 @@ body {
 
 #box1 {
   background-color: limegreen;
+  grid-column: 1/3;
+  grid-row: 1/3;
 }
 #box2 {
   background-color: purple;
