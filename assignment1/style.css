@@ -1,0 +1,6 @@
+ol {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  justify-content: center;
+}
