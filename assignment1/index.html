@@ -1,24 +1,33 @@
+<!-- Started the project by creating my index.html. -->
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Interactive Media - Assignment 1</title>
-    <!-- In codeline 8 & 9 I am linking the reset.css and style.css into my index.html -->
+
+    <!-- In codeline 8 & 9 I am linking the reset.css and style.css into my index.html. -->
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- In the h1, I used a span element on the text "Assignment 1", to create more hierarchy in the headline -->
+   
+    <!-- In the h1, I used a span element on the text "Assignment 1", to create more hierarchy in the headline. -->
     <h1>Interactive Media 1 - <span>Assignment 1</span></h1>
     <h2>By Oda Roenning Kraft-Pettersen (s4232439)</h2>
+    <!-- Created special class for my reference style. see more under style.css -> .reference.  -->
     <h2 class="reference">
       Bakground image used under license from © Nattapol Sritongcom / Adobe
       Stock
     </h2>
-    <!-- Added an interactive button that links to the webiste I am refering to -->
+
+    <!-- Added an interactive button that links to the webiste I am refering to. -->
     <a href="https://www.luni.app/" class="button-link">Luni Website</a>
     <h3>Total questions on this page:</h3>
+
+    <!-- Added a grid function that displays the contents of my website. I did this to showcase how I have understood and learned the premises of CSS grid. -->
+    <ol>
     <div id="grid-container">
       <div id="q1">1</a></div>
       <div id="q2">2</div>
@@ -34,11 +43,19 @@
       <div id="q12">12</div>
       <div id="q13">13</div>
     </div>
-    <h3>
+    </ol>
+
+    <!-- Added an image of the website I chose. -->
+    <img src="Luni-homepage.png" alt="">
+
+    <!-- Added a class that creates an indent in the second line of the h3 text,
+    to make it look cleaner. -->
+    <h3 class="h3-bullet-singledigit">
       1. What was the first thing you paid attention to when interacting with
       the experience?
     </h3>
     <p>
+      <!-- Throughout my answers, I have used the "em" function to emphasize certain terms, specifically my website's company name: "Luni". -->
       The first thing I paid attention to when interacting with the website was
       how well it immerses the user into their "brand world". First of all,
       <em>Luni</em>
@@ -46,8 +63,8 @@
       elements that respond dynamically to user input, such as hovering, through
       movement and scaling. The design style of the website itself is also
       visually appealing, making the experience fun and intriguing.
-      <!-- The function in codeline 43 creates a break in between the paragraphs, without breaking the border between the paragraphs -->
-      <br /><br />
+      <!-- The function in codeline 59 creates a break in between the paragraphs, without breaking the border between the paragraphs. -->
+      <br/><br/>
       Additionally, the camera's perspective subtly shifts in response to the
       cursor's position, which intensifies the feeling of being immersed, almost
       as if you are inside a video game. Taking all of these elements into
@@ -55,18 +72,19 @@
       motivation to continue exploring the website and its contents upon my
       first interaction.
     </p>
-    <h3>
+    <h3 class="h3-bullet-singledigit">
       2. Spend two minutes with the experience and create a list of each of your
       discrete actions.
     </h3>
-    <!-- Used command ul>li*4 to create list  -->
+
+    <!-- Used command ul>li*4 to create list.  -->
     <ul>
       <li>Hover</li>
       <li>Scroll</li>
       <li>Click</li>
       <li>Drag</li>
     </ul>
-    <h3>
+    <h3 class="h3-bullet-singledigit">
       3. What part of the experience did you spend the most time engaging with?
     </h3>
     <p>
@@ -80,7 +98,7 @@
       interactions make the website playful and increases the overall time spent
       by users on their website.
     </p>
-    <h3>
+    <h3 class="h3-bullet-singledigit">
       4. What was the most common action in your two minute interaction with the
       experience?
     </h3>
@@ -92,7 +110,7 @@
       for the user to navigate the website and locate specific information
       effectively.
     </p>
-    <h3>
+    <h3 class="h3-bullet-singledigit">
       5. What is your impression of the intended primary goal of the interactive
       experience?
     </h3>
@@ -110,7 +128,7 @@
       designs. These “out-of-the-ordinary" features enhance engagement and make
       the website more intriguing.
     </p>
-    <h3>
+    <h3 class="h3-bullet-singledigit">
       6. How does the interactive experience communicate this primary goal?
     </h3>
     <p>
@@ -124,7 +142,7 @@
       aware of the power of personal branding, an awareness that is very
       attractive for future clients.
     </p>
-    <h3>
+    <h3 class="h3-bullet-singledigit">
       7. What is your impression of how the experience should be interacted with
       over time?
     </h3>
@@ -139,7 +157,7 @@
       with open career positions and news on app developments to entice users to
       re-visit the website over a long period of time.
     </p>
-    <h3>
+    <h3 class="h3-bullet-singledigit">
       8. How does the interactive experience communicate how it should be
       interacted with over time?
     </h3>
@@ -150,7 +168,7 @@
       focus on creating a unique interface that piques the users' interest, so
       they might be willing to return to the website.
     </p>
-    <h3>
+    <h3 class="h3-bullet-singledigit">
       9. What other media forms (digital or otherwise) does the experience
       reference?
     </h3>
@@ -166,8 +184,8 @@
       <em>Luni</em> is a company that makes profit from branding, marketing, and
       developing apps for companies.
     </p>
-    <h3>
-      10.What does this reference/s communicate to you about how you should act
+    <h3 class="h3-bullet-doubledigit">
+      10. What does this reference/s communicate to you about how you should act
       when engaging with your research experience?
     </h3>
     <p>
@@ -182,8 +200,8 @@
       need of prior knowledge of the company. This makes the experience feel
       accessible and easy to return to regularly.
     </p>
-    <h3>
-      11.What does this reference/s communicate to you about how you should feel
+    <h3 class="h3-bullet-doubledigit">
+      11. What does this reference/s communicate to you about how you should feel
       when engaging with your research experience?
     </h3>
     <p>
@@ -195,7 +213,7 @@
       creating this emotional response, as these were the emotions I experienced
       as I interacted with their website.
     </p>
-    <h3>
+    <h3 class="h3-bullet-doubledigit">
       12. What is the most frustrating part of the interaction to you and what
       makes that part frustrating?
     </h3>
@@ -209,7 +227,7 @@
       top. This frustration could easily be fixed by attaching a sticky top-bar
       to the overlay, so the user has the opportunity to exit the text overlay
       if they would like.
-      <br /><br />
+      <br/><br/>
       Additionally, there is no search tool that, in my opinion, would make it
       easier for the user to navigate the website and locate specific
       information quickly. Instead, the user is being forced to go along with
@@ -217,7 +235,7 @@
       find the right information. This can be a somewhat frustrating experience
       if one wishes to find information effectively.
     </p>
-    <h3>
+    <h3 class="h3-bullet-doubledigit">
       13. What is the most satisfying part of the interaction to you and what
       makes that part satisfying?
     </h3>

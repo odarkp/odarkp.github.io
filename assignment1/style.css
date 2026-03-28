@@ -1,13 +1,18 @@
+/* In my layout styling with CSS, I have focused on creating a clean, minimalistic and visually pleasing interface using what I have learned in our classes so far. */
+
 body {
   margin: 0 auto;
   font-size: 1rem;
+  font-family: sans-serif;
   margin-left: 30px;
   text-align: left;
-  /* Added a free liscence background image from Adobe Stock to match the vidual identity of my chosen website */
+  /* Added a free liscence background image from Adobe Stock to match the visual identity of my chosen website */
   background-image: url(AdobeStock_292611643.jpeg);
   background-size: cover;
   background-position: center;
 }
+
+/* Added 3 different headlines to create hierarchy in my layout. */
 h1 {
   font-size: 2rem;
   margin-top: 30px;
@@ -20,25 +25,42 @@ h2 {
 h3 {
   font-size: 1.2rem;
   font-weight: bold;
-  max-width: 500px;
-  margin-top: 30px;
+  max-width: 650px;
+  margin-top: 35px;
   margin-bottom: 15px;
 }
-/* created a special class for references */
+
+/* Created indentations as my h3's go over two lines, and I want the second line to start where the text starts in the first line. 
+Got help from this online forum: https://stackoverflow.com/questions/11556493/second-line-in-li-starts-under-the-bullet-after-css-reset */
+.h3-bullet-singledigit {
+  list-style-position: inside;
+  text-indent: -1.4rem;
+  margin-left: 1rem;
+}
+.h3-bullet-doubledigit {
+  list-style-position: inside;
+  text-indent: -2.1rem;
+  margin-left: 1rem;
+}
+
+/* Created a span element in h1 to strengthen hierarchy by adding bolder text */
+span {
+  font-weight: bold;
+}
+
+/* Created a special class for references */
 .reference {
   font-size: 0.8rem;
   color: white;
   margin-bottom: 30px;
 }
-span {
-  font-weight: bold;
-}
-/* Added a button with an embedded link to my chosen website */
+
+/* Added a button with an embedded link to my chosen website, to make my website more interactive. */
 .button-link {
   display: flex;
   align-content: center;
   background-color: white;
-  width: 110px;
+  width: 117px;
   min-height: 10px;
   border: none;
   border-style: outset;
@@ -47,129 +69,157 @@ span {
   margin-top: 50px;
   margin-bottom: 50px;
 }
-/* Added a hover effect for a better and more interactive user experience */
+/* Added a hover effect for a better and more interactive user experience. */
 .button-link:hover {
   color: white;
   background-color: black;
 }
 ol {
-  /* I used the funtion "flex-wrap" to ensure that all the list items will appear on the screen, independent of the webpage size */
+  /* I used the funtion "flex-wrap" to ensure that all the list items will appear on the screen, independent of the webpage size. */
   display: flex;
   flex-wrap: wrap;
   list-style: none;
   gap: 30px;
   justify-content: left;
+}
+
+/* Editing the size of the image I inserted, so it matches the border of the other elements included in my website layout.
+Img. source -> https://www.luni.app/ */
+img {
+  width: 669px;
+  height: auto;
+}
+
+/* Determining the size of my paragraphs and adding a border around its content. */
+p {
+  width: 800px;
+  border: 3px dotted white;
+  min-height: 10px;
+  padding: 15px;
   margin-bottom: 50px;
 }
+
+/* Added a bold emphasis to specific words (Luni) in my paragraphs */
+p em {
+  font-style: italic;
+  font-weight: bold;
+}
+
 ul {
+  /* Used flex-direction + justify-content to ensure that my list of items were in a row and in the centre of the border surrounding it. */
   list-style: circle;
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 30px;
   margin-top: 15px;
-  width: 500px;
+  width: 666px;
   border: 3px dotted white;
   min-height: 10px;
   padding: 15px;
   margin-bottom: 50px;
 }
-p {
-  width: 500px;
-  border: 3px dotted white;
-  min-height: 10px;
-  padding: 15px;
-  margin-bottom: 50px;
-}
-/* Added a bold emphasis to specific words (Luni) in my paragraphs */
-p em {
-  font-style: italic;
-  font-weight: bold;
-}
+
+/* Added a grid to create boxes (q1-q13) that displays the contents of my website. */
 #grid-container {
-  width: 500px;
+  width: 670px;
   height: 50px;
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(7, 1fr);
-  margin-bottom: 50px;
+  grid-template-columns: repeat(13, 1fr);
+  grid-template-rows: repeat(13, 1fr);
+  margin-bottom: 30px;
 }
+
+/* q="question" */
 #q1 {
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
 }
 #q2 {
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
 }
 #q3 {
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
 }
 #q4 {
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
 }
 #q5 {
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
 }
 #q6 {
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
 }
 #q7 {
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
 }
 #q8 {
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
 }
 #q9 {
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
 }
 #q10 {
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
 }
 #q11 {
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
 }
 #q12 {
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
 }
 #q13 {
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
 }
