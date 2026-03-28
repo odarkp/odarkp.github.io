@@ -1,4 +1,4 @@
-/* In my layout styling with CSS, I have focused on creating a clean, minimalistic and visually pleasing interface using what I have learned in our classes so far. */
+/* In my layout styling with CSS, I have focused on creating a clean, minimalistic, and visually pleasing interface using what I have learned in our classes so far. */
 
 body {
   margin: 0 auto;
@@ -6,7 +6,7 @@ body {
   font-family: sans-serif;
   margin-left: 30px;
   text-align: left;
-  /* Added a free liscence background image from Adobe Stock to match the visual identity of my chosen website */
+  /* Added a free liscence background image from Adobe Stock to match the visual identity of my chosen website. */
   background-image: url(AdobeStock_292611643.jpeg);
   background-size: cover;
   background-position: center;
@@ -43,12 +43,12 @@ Got help from this online forum: https://stackoverflow.com/questions/11556493/se
   margin-left: 1rem;
 }
 
-/* Created a span element in h1 to strengthen hierarchy by adding bolder text */
+/* Created a span element in h1 to strengthen hierarchy by adding bolder text. */
 span {
   font-weight: bold;
 }
 
-/* Created a special class for references */
+/* Created a special class for references. */
 .reference {
   font-size: 0.8rem;
   color: white;
@@ -75,7 +75,7 @@ span {
   background-color: black;
 }
 ol {
-  /* I used the funtion "flex-wrap" to ensure that all the list items will appear on the screen, independent of the webpage size. */
+  /* I used the function "flex-wrap" to ensure that all the list items will appear on the screen, independent of the webpage size. */
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -99,14 +99,14 @@ p {
   margin-bottom: 50px;
 }
 
-/* Added a bold emphasis to specific words (Luni) in my paragraphs */
+/* Added a bold emphasis to specific words (Luni) in my paragraphs. */
 p em {
   font-style: italic;
   font-weight: bold;
 }
 
 ul {
-  /* Used flex-direction + justify-content to ensure that my list of items were in a row and in the centre of the border surrounding it. */
+  /* Used flex-direction + justify-content to ensure that my list of items were in a row and in the center of the border surrounding it. */
   list-style: circle;
   display: flex;
   flex-direction: row;
