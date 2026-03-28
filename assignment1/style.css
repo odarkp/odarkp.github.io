@@ -2,7 +2,10 @@ body {
   margin: 0 auto;
   font-size: 1rem;
   margin-left: 30px;
-  background-color: lightcyan;
+  /* Added a free liscence background image from Adobe Stock to match the vidual identity of my chosen website */
+  background-image: url(AdobeStock_292611643.jpeg);
+  background-size: cover;
+  background-position: center;
   text-align: left;
 }
 h1 {
@@ -11,7 +14,7 @@ h1 {
   margin-bottom: 30px;
 }
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin-bottom: 30px;
 }
 h3 {
@@ -27,7 +30,7 @@ span {
 .button-link {
   display: flex;
   align-content: center;
-  background-color: lightpink;
+  background-color: violet;
   width: 110px;
   min-height: 10px;
   border: none;
@@ -46,7 +49,7 @@ ol {
   list-style: none;
   gap: 30px;
   justify-content: left;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 ul {
   list-style: circle;
@@ -56,18 +59,19 @@ ul {
   gap: 30px;
   margin-top: 15px;
   width: 500px;
-  border: 3px dotted lightpink;
-  min-height: 10px;
-  padding: 15px;
-  margin-bottom: 30px;
-}
-p {
-  width: 500px;
-  border: 3px dotted lightpink;
+  border: 3px dotted white;
   min-height: 10px;
   padding: 15px;
   margin-bottom: 50px;
 }
+p {
+  width: 500px;
+  border: 3px dotted white;
+  min-height: 10px;
+  padding: 15px;
+  margin-bottom: 50px;
+}
+/* Added a bold emphasis to specific words (Luni) in my paragraphs */
 p em {
   font-style: italic;
   font-weight: bold;
