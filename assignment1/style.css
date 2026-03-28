@@ -1,6 +1,74 @@
-ol {
+body {
+  margin: 0 auto;
+  font-size: 1rem;
+  margin-left: 30px;
+  background-color: lightcyan;
+  text-align: left;
+}
+h1 {
+  font-size: 2rem;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  max-width: 500px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+span {
+  font-weight: bold;
+}
+.button-link {
   display: flex;
+  align-content: center;
+  background-color: lightpink;
+  width: 110px;
+  min-height: 10px;
+  border: none;
+  border-style: outset;
+  color: black;
+  padding: 10px;
+}
+/* Added a hover effect for a better and more interactive user experience */
+.button-link:hover {
+  color: white;
+}
+ol {
+  /* I used the funtion "flex-wrap" to ensure that all the list items will appear on the screen, independent of the webpage size. */
+  display: flex;
+  flex-wrap: wrap;
   list-style: none;
   gap: 30px;
+  justify-content: left;
+  margin-bottom: 30px;
+}
+ul {
+  list-style: circle;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
+  gap: 30px;
+  margin-top: 15px;
+  width: 500px;
+  border: 3px dotted lightpink;
+  min-height: 10px;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+p {
+  width: 500px;
+  border: 3px dotted lightpink;
+  min-height: 10px;
+  padding: 15px;
+  margin-bottom: 50px;
+}
+p em {
+  font-style: italic;
+  font-weight: bold;
 }
