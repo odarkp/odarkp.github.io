@@ -1,4 +1,5 @@
-/* In my layout styling with CSS, I have focused on creating a clean, minimalistic, and visually pleasing interface using what I have learned in our classes so far. */
+/* In my layout styling with CSS, I have focused on creating a clean, minimalistic, and visually pleasing
+ interface using what I have learned in our classes so far. */
 
 body {
   margin: 0 auto;
@@ -33,12 +34,12 @@ h3 {
 /* Created indentations as my h3's go over two lines, and I want the second line to start where the text starts in the first line. 
 Got help from this online forum: https://stackoverflow.com/questions/11556493/second-line-in-li-starts-under-the-bullet-after-css-reset */
 .h3-bullet-singledigit {
-  list-style-position: inside;
+  list-style-position: outside;
   text-indent: -1.4rem;
   margin-left: 1rem;
 }
 .h3-bullet-doubledigit {
-  list-style-position: inside;
+  list-style-position: outside;
   text-indent: -2.1rem;
   margin-left: 1rem;
 }
@@ -73,14 +74,6 @@ span {
 .button-link:hover {
   color: white;
   background-color: black;
-}
-ol {
-  /* I used the function "flex-wrap" to ensure that all the list items will appear on the screen, independent of the webpage size. */
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  gap: 30px;
-  justify-content: left;
 }
 
 /* Editing the size of the image I inserted, so it matches the border of the other elements included in my website layout.
@@ -120,103 +113,17 @@ ul {
   margin-bottom: 50px;
 }
 
-/* Added a grid to create boxes (q1-q13) that displays the contents of my website. */
+/* Added a grid to create boxes (q1-q13) that displays the contents of my website (total questions). */
 #grid-container {
   width: 670px;
-  height: 50px;
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(13, 1fr);
-  grid-template-rows: repeat(13, 1fr);
   margin-bottom: 30px;
 }
 
-/* q="question" */
-#q1 {
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-}
-#q2 {
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-}
-#q3 {
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-}
-#q4 {
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-}
-#q5 {
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-}
-#q6 {
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-}
-#q7 {
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-}
-#q8 {
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-}
-#q9 {
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-}
-#q10 {
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-}
-#q11 {
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-}
-#q12 {
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-}
-#q13 {
+/* editing the look of the grid-item */
+.grid-item {
   background-color: white;
   display: flex;
   align-items: center;
