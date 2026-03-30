@@ -14,7 +14,7 @@
   font: inherit; /* Get rid of all font sizes and heights */
 }
 html {
-  color-scheme: dark light; /* Default dark */
+  color-scheme: light; /* Changed it to default light-mode, as all the text on my website turned white (thus illegible) when it was on default dark mode.*/
   hanging-punctuation: first last; /* Not supported in Chrome */
 }
 body {
