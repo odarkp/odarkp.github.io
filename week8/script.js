@@ -87,3 +87,83 @@ function addLike() {
   //   Here I am adding a function to display the likes count
   likes.textContent = likesCount;
 }
+
+// fullscreen logic
+
+const fullscreenButton = document.querySelector("#fullscreen-button");
+console.log(fullscreenButton);
+
+fullscreenButton.addEventListener("click", goFullscreen);
+
+// function to make video go fullscreen on doubleclick
+myVideo.addEventListener("dblclick", goFullscreen);
+
+function goFullscreen() {
+  if (!document.fullscreenElement) {
+    myVideo.requestFullscreen();
+  } else {
+    document.exitFullscreen();
+  }
+}
+
+// progressbar logic
+
+const progressBar = document.querySelector("#progress-bar");
+console.log(progressBar);
+
+myVideo.addEventListener("timeupdate", updateProgress);
+
+function updateProgress() {
+  //   console.log(myVideo.currentTime);
+  let progress = (myVideo.currentTime / myVideo.duration) * 100;
+
+  // //   use Math.floor function to see the progress as numbers in the javascript console
+  //   let progress = Math.floor((myVideo.currentTime / myVideo.duration) * 100);
+
+  console.log(progress);
+  progressBar.style.width = progress + "%";
+}
+
+// videolist logic - how to change between medias!
+
+// firstly, access all your media through their id's
+const videoList = [
+  { id: 1, src: "stardust.mp4", name: " Stardust" },
+  { id: 2, src: "zenscape.mp4", name: " Zenscape" },
+  {
+    id: 3,
+    src: "https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4",
+    name: " Music Video",
+  },
+];
+
+// then create functions for each video that changes the image source in the javascript upon click
+const stardustButton = document.querySelector("#stardust-vid-button");
+console.log(stardustButton);
+stardustButton.addEventListener("click", function () {
+  chooseVideo(0);
+});
+
+const zenscapeButton = document.querySelector("#zenscape-vid-button");
+console.log(zenscapeButton);
+zenscapeButton.addEventListener("click", function () {
+  chooseVideo(1);
+});
+
+const musicvideoButton = document.querySelector("#musicvideo-vid-button");
+console.log(musicvideoButton);
+musicvideoButton.addEventListener("click", function () {
+  chooseVideo(2);
+});
+
+const msg = document.querySelector("#msg");
+console.log(msg);
+
+// create a function that actually changes the media/video src on the webage
+function chooseVideo(id) {
+  console.log(videoList[id].name);
+  msg.textContent = "now playing" + videoList[id].name;
+  myVideo.src = videoList[id].src;
+  myVideo.load();
+  //   myVideo.play();
+}
