@@ -1,29 +1,25 @@
-/* 
-*   Kevin Powell
-*   https://youtu.be/cCAtD_BAHNw 
+/* Reset.css content has been imported from a provided file from our Interactive Media modules. */
+/*
+* Kevin Powell
+* https://youtu.be/cCAtD_BAHNw
 */
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
-
 * {
   margin: 0;
   padding: 0;
   font: inherit; /* Get rid of all font sizes and heights */
 }
-
 html {
-  color-scheme: dark light; /* Default dark */
+  color-scheme: light; /* Changed it to default light-mode, as all the text on my website turned white (thus illegible) when it was on default dark mode.*/
   hanging-punctuation: first last; /* Not supported in Chrome */
 }
-
 body {
   min-height: 100vh;
 }
-
 /* Media responsive */
 img,
 picture,
@@ -32,7 +28,6 @@ video {
   display: block;
   max-width: 100%;
 }
-
 h1,
 h2,
 h3,
@@ -41,12 +36,10 @@ h5,
 h6 {
   text-wrap: balance;
 }
-
 p {
-  /* max-width: 75ch; */
+  max-width: 75ch;
   text-wrap: pretty; /* Prevents orphans on lines */
 }
-
 @media (prefers-reduced-motion: no-preference) {
   :has(:target) {
     scroll-behavior: smooth;

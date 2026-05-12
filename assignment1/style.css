@@ -1,0 +1,132 @@
+/* In my layout styling with CSS, I have focused on creating a clean, minimalistic, and visually pleasing
+ interface using what I have learned in our classes so far. */
+
+body {
+  margin: 0 auto;
+  font-size: 1rem;
+  font-family: sans-serif;
+  margin-left: 30px;
+  text-align: left;
+  /* Added a free liscence background image from Adobe Stock to match the visual identity of my chosen website. */
+  background-image: url(AdobeStock_292611643.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Added 3 different headlines to create hierarchy in my layout. */
+h1 {
+  font-size: 2rem;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  max-width: 650px;
+  margin-top: 35px;
+  margin-bottom: 15px;
+}
+
+/* Created indentations as my h3's go over two lines, and I want the second line to start where the text starts in the first line. 
+Got help from this online forum: https://stackoverflow.com/questions/11556493/second-line-in-li-starts-under-the-bullet-after-css-reset */
+.h3-bullet-singledigit {
+  list-style-position: outside;
+  text-indent: -1.4rem;
+  margin-left: 1rem;
+}
+.h3-bullet-doubledigit {
+  list-style-position: outside;
+  text-indent: -2.1rem;
+  margin-left: 1rem;
+}
+
+/* Created a span element in h1 to strengthen hierarchy by adding bolder text. */
+span {
+  font-weight: bold;
+}
+
+/* Created a special class for references. */
+.reference {
+  font-size: 0.8rem;
+  color: white;
+  margin-bottom: 30px;
+}
+
+/* Added a button with an embedded link to my chosen website, to make my website more interactive. */
+.button-link {
+  display: flex;
+  align-content: center;
+  background-color: white;
+  width: 117px;
+  min-height: 10px;
+  border: none;
+  border-style: outset;
+  color: black;
+  padding: 10px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+/* Added a hover effect for a better and more interactive user experience. */
+.button-link:hover {
+  color: white;
+  background-color: black;
+}
+
+/* Editing the size of the image I inserted, so it matches the border of the other elements included in my website layout.
+Img. source -> https://www.luni.app/ */
+img {
+  width: 669px;
+  height: auto;
+}
+
+/* Determining the size of my paragraphs and adding a border around its content. */
+p {
+  width: 800px;
+  border: 3px dotted white;
+  min-height: 10px;
+  padding: 15px;
+  margin-bottom: 50px;
+}
+
+/* Added a bold emphasis to specific words (Luni) in my paragraphs. */
+p em {
+  font-style: italic;
+  font-weight: bold;
+}
+
+ul {
+  /* Used flex-direction + justify-content to ensure that my list of items were in a row and in the center of the border surrounding it. */
+  list-style: circle;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 15px;
+  width: 666px;
+  border: 3px dotted white;
+  min-height: 10px;
+  padding: 15px;
+  margin-bottom: 50px;
+}
+
+/* Added a grid to create boxes (q1-q13) that displays the contents of my website (total questions). */
+#grid-container {
+  width: 670px;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(13, 1fr);
+  margin-bottom: 30px;
+}
+
+/* editing the look of the grid-item */
+.grid-item {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}

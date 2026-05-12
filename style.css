@@ -1,132 +1,139 @@
-/* In my layout styling with CSS, I have focused on creating a clean, minimalistic, and visually pleasing
- interface using what I have learned in our classes so far. */
+:root {
+  --primary-bg-color: #f4f4f4;
+  --text-color: #333;
+  --main-bg-color: #333;
+  --main-text-color: #fff;
+  --main-btn-bg-color: #938989;
+}
+
+body,
+h1,
+h2,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  margin: 0 auto;
-  font-size: 1rem;
-  font-family: sans-serif;
-  margin-left: 30px;
-  text-align: left;
-  /* Added a free liscence background image from Adobe Stock to match the visual identity of my chosen website. */
-  background-image: url(AdobeStock_292611643.jpeg);
-  background-size: cover;
-  background-position: center;
-}
-
-/* Added 3 different headlines to create hierarchy in my layout. */
-h1 {
-  font-size: 2rem;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-h2 {
-  font-size: 1.4rem;
-  margin-bottom: 15px;
-}
-h3 {
-  font-size: 1.2rem;
-  font-weight: bold;
-  max-width: 650px;
-  margin-top: 35px;
-  margin-bottom: 15px;
-}
-
-/* Created indentations as my h3's go over two lines, and I want the second line to start where the text starts in the first line. 
-Got help from this online forum: https://stackoverflow.com/questions/11556493/second-line-in-li-starts-under-the-bullet-after-css-reset */
-.h3-bullet-singledigit {
-  list-style-position: outside;
-  text-indent: -1.4rem;
-  margin-left: 1rem;
-}
-.h3-bullet-doubledigit {
-  list-style-position: outside;
-  text-indent: -2.1rem;
-  margin-left: 1rem;
-}
-
-/* Created a span element in h1 to strengthen hierarchy by adding bolder text. */
-span {
-  font-weight: bold;
-}
-
-/* Created a special class for references. */
-.reference {
-  font-size: 0.8rem;
-  color: white;
-  margin-bottom: 30px;
-}
-
-/* Added a button with an embedded link to my chosen website, to make my website more interactive. */
-.button-link {
+  font-family: "Arial", sans-serif;
+  background-color: var(--primary-bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
   display: flex;
-  align-content: center;
-  background-color: white;
-  width: 117px;
-  min-height: 10px;
-  border: none;
-  border-style: outset;
-  color: black;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Add additional styles as needed */
+
+/* Create a container for the main content */
+.container {
+  max-width: 1000px;
+  width: 100%;
   padding: 10px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-/* Added a hover effect for a better and more interactive user experience. */
-.button-link:hover {
-  color: white;
-  background-color: black;
 }
 
-/* Editing the size of the image I inserted, so it matches the border of the other elements included in my website layout.
-Img. source -> https://www.luni.app/ */
-img {
-  width: 669px;
-  height: auto;
+/* Header styling */
+header {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+}
+.sub-heading {
+  font-size: 10px;
+  padding: 10px 0;
 }
 
-/* Determining the size of my paragraphs and adding a border around its content. */
-p {
-  width: 800px;
-  border: 3px dotted white;
-  min-height: 10px;
-  padding: 15px;
-  margin-bottom: 50px;
+/* Navigation styling */
+nav {
+  margin-top: 20px;
+  text-align: center;
 }
 
-/* Added a bold emphasis to specific words (Luni) in my paragraphs. */
-p em {
-  font-style: italic;
-  font-weight: bold;
-}
-
-ul {
-  /* Used flex-direction + justify-content to ensure that my list of items were in a row and in the center of the border surrounding it. */
-  list-style: circle;
+nav ul {
+  list-style: none;
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  gap: 30px;
-  margin-top: 15px;
-  width: 666px;
-  border: 3px dotted white;
-  min-height: 10px;
-  padding: 15px;
-  margin-bottom: 50px;
 }
 
-/* Added a grid to create boxes (q1-q13) that displays the contents of my website (total questions). */
-#grid-container {
-  width: 670px;
-  display: grid;
+nav ul li {
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+/* Media player styling */
+.media-player {
+  background-color: #1a120b;
+  display: flex;
+  text-align: center;
+  margin: auto;
+  max-width: 1000px;
+  justify-content: center;
+  align-items: center;
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #e5e5cb;
+  /* color: #3c2a21; */
+  font-size: 1.1rem;
+  width: 150%;
+  margin: 0 auto;
+}
+
+.media-player video {
+  max-width: 100%;
+}
+
+.custom-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 1rem;
-  grid-template-columns: repeat(13, 1fr);
-  margin-bottom: 30px;
+  margin-top: 10px;
+  width: 100%;
 }
 
-/* editing the look of the grid-item */
-.grid-item {
-  background-color: white;
+.custom-controls button {
+  background-color: var(--main-btn-bg-color);
+  color: var(--main-text-color);
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 16px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 10px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #ddd;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  background-color: var(--main-bg-color);
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+/* Footer styling */
+footer {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
 }

@@ -1,252 +1,100 @@
-<!-- Started the project by creating my index.html. -->
-
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Interactive Media - Assignment 1</title>
-
-    <!-- Linking the reset.css and style.css into my index.html. -->
+    <title>Document</title>
+    <!-- add the font family of your choice -->
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <!-- In the h1, I used a span element on the text "Assignment 1", to create more hierarchy in the headline. -->
-    <h1>Interactive Media 1 - <span>Assignment 1</span></h1>
-    <h2>By Oda Roenning Kraft-Pettersen (s4232439)</h2>
-    <!-- Created a special class for my reference style. see more under style.css -> .reference.  -->
-    <h2 class="reference">
-      Background image used under license from © Nattapol Sritongcom / Adobe
-      Stock
+    <!-- Header Section -->
+    <header>
+      <h1>Media Player Website</h1>
+    </header>
+    <h2 class="sub-heading">
+      Assignment 2 created by Oda Roenning Kraft-Pettersen (s4232439)
     </h2>
 
-    <!-- Added an interactive button that links to the website I am referring to. -->
-    <a href="https://www.luni.app/" class="button-link">Luni Website</a>
-    <h3>Total questions on this page:</h3>
+    <!-- Navigation Section -->
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Music</a></li>
+        <li><a href="#">Favorites</a></li>
+        <!-- Add or remove navigation items as needed -->
+      </ul>
+    </nav>
 
-    <!-- Added a grid function that displays the contents of my website. I did this to showcase how I have understood and learned the premises of CSS grid. -->
-    <div id="grid-container">
-      <div class="grid-item">1</div>
-      <div class="grid-item">2</div>
-      <div class="grid-item">3</div>
-      <div class="grid-item">4</div>
-      <div class="grid-item">5</div>
-      <div class="grid-item">6</div>
-      <div class="grid-item">7</div>
-      <div class="grid-item">8</div>
-      <div class="grid-item">9</div>
-      <div class="grid-item">10</div>
-      <div class="grid-item">11</div>
-      <div class="grid-item">12</div>
-      <div class="grid-item">13</div>
-    </div>
+    <!-- Main Content Section -->
+    <main class="container">
+      <!-- Media Player Section -->
+      <div class="media-player">
+        <button id="play-pause-button"></button>
+        <img
+          id="play-pause-img"
+          src="https://img.icons8.com/ios-glyphs/30/play--v2.png"
+          alt="Play Button"
+          width="10"
+          height="10"
+        />
 
-    <!-- Added an image of the website I chose. Img. source -> https://www.luni.app/-->
-    <img src="Luni-homepage.png" alt="Screenshot of the Luni homepage" />
+        <p id="msg"></p>
+        <audio
+          src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/p-hase_Hes.mp3"
+          controls
+          id="audio-1"
+        ></audio>
+        <audio
+          src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/p-hase_Dry-Down-feat-Ben-Snaath.mp3"
+          controls
+          id="audio-2"
+        ></audio>
+        <audio
+          src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/p-hase_Leapt.mp3"
+          controls
+          id="audio-3"
+        ></audio>
+        <audio
+          src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/p-hase_Water-Feature.mp3"
+          controls
+          id="audio-4"
+        ></audio>
+        <div class="custom-controls">
+          <button id="play-pause-btn" onclick="togglePlayPause()">
+            <img
+              id="play-pause-img"
+              src="https://img.icons8.com/ios-glyphs/30/play--v1.png"
+              alt="Play Button"
+              width="24"
+              height="24"
+            />
+          </button>
+          <!-- add the missing buttons or functionality here -->
+          <div class="progress-bar">
+            <span id="progress-bar-fill"></span>
+          </div>
+        </div>
+      </div>
 
-    <!-- Added a class that creates an indent in the second line of the h3 text,
-    to make it look cleaner. -->
-    <h3 class="h3-bullet-singledigit">
-      1. What was the first thing you paid attention to when interacting with
-      the experience?
-    </h3>
-    <p>
-      <!-- Throughout my answers, I have used the "em" function to emphasize certain terms, specifically my website's company name: "Luni". -->
-      The first thing I paid attention to when interacting with the website was
-      how well it immerses the user into their "brand world". First of all,
-      <em>Luni</em>
-      uses a very distinct and unique visual style, based on interactive 3D
-      elements that respond dynamically to user input, such as hovering, through
-      movement and scaling. The design style of the website itself is also
-      visually appealing, making the experience fun and intriguing.
-      <!-- The function in codeline 66 creates a break in between the paragraphs, without breaking the border between the paragraphs. -->
-      <br /><br />
-      Additionally, the camera's perspective subtly shifts in response to the
-      cursor's position, which intensifies the feeling of being immersed, almost
-      as if you are inside a video game. Taking all of these elements into
-      consideration, I was immediately met with a lot of excitement and
-      motivation to continue exploring the website and its contents upon my
-      first interaction.
-    </p>
-    <h3 class="h3-bullet-singledigit">
-      2. Spend two minutes with the experience and create a list of each of your
-      discrete actions.
-    </h3>
+      <!-- Additional Content Section -->
+      <section>
+        <h2>Additional Content</h2>
+        <p>This is where you can showcase any other relevant content.</p>
+        <!-- Add more content as needed -->
+      </section>
+    </main>
 
-    <!-- Used command ul>li*4 to create list.  -->
-    <ul>
-      <li>Hover</li>
-      <li>Scroll</li>
-      <li>Click</li>
-      <li>Drag</li>
-    </ul>
-    <h3 class="h3-bullet-singledigit">
-      3. What part of the experience did you spend the most time engaging with?
-    </h3>
-    <p>
-      I spent the most time interacting with the homepage interface. This is
-      because of the eye-catching and visually appealing 3D models that appear
-      when the user enters the webpage. Not only are these models visually
-      appealing, most of them are also interactive. For example, under the
-      homepage category "Omada", users can play their own football game by
-      clicking the interactive football on the screen. If they manage to score a
-      goal, an animation of bursting coins appears on the screen. These kinds of
-      interactions make the website playful and increases the overall time spent
-      by users on their website.
-    </p>
-    <h3 class="h3-bullet-singledigit">
-      4. What was the most common action in your two minute interaction with the
-      experience?
-    </h3>
-    <p>
-      The most common action in my two-minute interaction with the experience
-      was scrolling and clicking with my mouse. As the webpage only focuses on a
-      point-and-click based interaction that guides the user through the
-      webpage, there is no search tool that, in my opinion, would make it easier
-      for the user to navigate the website and locate specific information
-      effectively.
-    </p>
-    <h3 class="h3-bullet-singledigit">
-      5. What is your impression of the intended primary goal of the interactive
-      experience?
-    </h3>
-    <p>
-      My impression of the intended primary goal of the interactive experience
-      is to gain user interest. The company aims to create an interesting and
-      exciting experience, so the user becomes more intrigued and builds an
-      interest in finding out who <em>Luni</em> is and what they stand for.
-      <br /><br />
-      Capturing the attention of potential clients through a simple and
-      conventional website these days has become almost impossible in a highly
-      saturated digital environment. Therefore, <em>Luni</em> has seemingly
-      taken on an unconventinal approach, incorporating playable elements and
-      interactions that distinguish the experience from more “standard” web
-      designs. These “out-of-the-ordinary" features enhance engagement and make
-      the website more intriguing.
-    </p>
-    <h3 class="h3-bullet-singledigit">
-      6. How does the interactive experience communicate this primary goal?
-    </h3>
-    <p>
-      As <em>Luni</em> is a studio that focuses on B2C app development,
-      marketing and branding for companies, I believe their website is great at
-      attracting attention from potential customers. Their website's interactive
-      and playable elements showcase that they are both passionate about their
-      craft, and fully capable of creating immersive experiences for users
-      through mobile applications. Even on their own website, they stick to
-      their company's distinct design profile, which shows that they are very
-      aware of the power of personal branding, an awareness that is very
-      attractive for future clients.
-    </p>
-    <h3 class="h3-bullet-singledigit">
-      7. What is your impression of how the experience should be interacted with
-      over time?
-    </h3>
-    <p>
-      My impression is that the <em>Luni</em> website appears to be designed for
-      long-term, ongoing engagement, rather than a one-time visit. The website
-      itself operates as an entry point for users and potential clients to learn
-      and experience how <em>Luni</em> works and what they are capable of
-      creating. The website's interface also focuses on accessible, simple,
-      user-friendly design in order to support continuous interaction.
-      Additionally, it appears that <em>Luni</em> often updates their website
-      with open career positions and news on app developments to entice users to
-      re-visit the website over a long period of time.
-    </p>
-    <h3 class="h3-bullet-singledigit">
-      8. How does the interactive experience communicate how it should be
-      interacted with over time?
-    </h3>
-    <p>
-      The website does not explicitly communicate that it should be interacted
-      with over time. The website provides no mechanisms or features that
-      encourage users to return or engage with it repeatedly. Instead, they
-      focus on creating a unique interface that piques the users' interest, so
-      they might be willing to return to the website.
-    </p>
-    <h3 class="h3-bullet-singledigit">
-      9. What other media forms (digital or otherwise) does the experience
-      reference?
-    </h3>
-    <p>
-      The website is clearly influenced by other media forms such as mobile
-      applications. The digital interface contains multiple similarities to the
-      structures and interfaces of apps. This includes playable elements (as
-      mentioned in question 3), a simple and intuitive interface, and a user
-      flow that guides you through the levels of information included on the
-      website. As the website reminds me of video games, it evokes feelings of
-      playfulness and happiness, feelings I believe <em>Luni</em> intends to
-      give the user. This makes sense when you take into account that
-      <em>Luni</em> is a company that makes profit from branding, marketing, and
-      developing apps for companies.
-    </p>
-    <h3 class="h3-bullet-doubledigit">
-      10. What does this reference/s communicate to you about how you should act
-      when engaging with your research experience?
-    </h3>
-    <p>
-      This communicates to me that <em>Luni's</em> use of mobile applications
-      and games as media references encourages the users to spend more time on
-      the website and get excited as they play through its interactive elements,
-      at the same time as they are getting informed about the company. This
-      creates exploratory behavior towards the website's contents, and suggests
-      that the users are invited to participate, rather than simply reading
-      information. The simple visual design creates a low-pressure form of
-      interaction, where users can engage casually with the website, without the
-      need of prior knowledge of the company. This makes the experience feel
-      accessible and easy to return to regularly.
-    </p>
-    <h3 class="h3-bullet-doubledigit">
-      11. What does this reference/s communicate to you about how you should
-      feel when engaging with your research experience?
-    </h3>
-    <p>
-      This communicates to me that <em>Luni's</em> use of mobile applications
-      and games as media references encourages the user to respond positively to
-      the website. Based on their colorful visual style and interactive
-      mechanics, they aim to evoke emotions such as happiness, excitement,
-      nostalgia, and enjoyment. In my opinion, I believe they are successful in
-      creating this emotional response, as these were the emotions I experienced
-      as I interacted with their website.
-    </p>
-    <h3 class="h3-bullet-doubledigit">
-      12. What is the most frustrating part of the interaction to you and what
-      makes that part frustrating?
-    </h3>
-    <p>
-      When you choose to read about the sub-categories included in the homepage,
-      an overlay of text fills the screen, and the user has to scroll through
-      the overlay in order to read everything. However, while scrolling, the
-      overlay collapse button disappears, and thus, the user is stuck on the
-      text overlay and loses the option to exit the reading experience. The only
-      way to close this overlay is to scroll all the way back down or to the
-      top. This frustration could easily be fixed by attaching a sticky top-bar
-      to the overlay, so the user has the opportunity to exit the text overlay
-      if they would like.
-      <br /><br />
-      Additionally, there is no search tool that, in my opinion, would make it
-      easier for the user to navigate the website and locate specific
-      information quickly. Instead, the user is being forced to go along with
-      the websites intended journey through multiple interfaces, in order to
-      find the right information. This can be a somewhat frustrating experience
-      if one wishes to find information effectively.
-    </p>
-    <h3 class="h3-bullet-doubledigit">
-      13. What is the most satisfying part of the interaction to you and what
-      makes that part satisfying?
-    </h3>
-    <p>
-      In my opinion, the most satisfying part of the interaction is the overall
-      flow of the website, both the user flow and the visual flow. When it comes
-      to the user flow, it is clear to see that <em>Luni</em> has developed
-      their website with the intention to guide the user through an informative
-      and interactive journey, that creates a client interest with the user. The
-      interface is very minimalistic and simple, which makes the UX (User
-      Experience) intuitive and efficient. When it comes to the visual flow, the
-      website is characterized by soft colors, beautiful 3D models, satisfying
-      transitions and animations, and a uniform design profile, which makes the
-      UI (User Interface) very appealing to the user.
-    </p>
+    <!-- Footer Section -->
+    <footer>
+      <p>&copy; 2024 Media Player Website. All rights reserved.</p>
+      <a href="https://icons8.com/icon/59862/play">Play</a> icon by
+      <a href="https://icons8.com">Icons8</a>
+      <a href="https://icons8.com/icon/61012/pause">Pause</a> icon by
+      <a href="https://icons8.com">Icons8</a>
+    </footer>
   </body>
 </html>
