@@ -1,6 +1,19 @@
 const video = document.querySelector("#custom-video-player");
+
+// when video plays
+video.addEventListener("play", () => {
+  document.body.style.animationPlayState = "running";
+});
+
+// when video paused
+video.addEventListener("pause", () => {
+  document.body.style.animationPlayState = "paused";
+});
+
 const playPauseBtn = document.querySelector("#play-pause-btn");
 const playPauseImg = document.querySelector("#play-pause-img");
+
+// progressbar logic
 const progressBar = document.querySelector("#progress-bar-fill");
 video.removeAttribute("controls");
 // playPauseBtn.addEventListener("click", togglePlayPause);
@@ -19,3 +32,88 @@ function updateProgressBar() {
   progressBar.style.width = value + "%";
 }
 // Add other functionalities here
+
+// mute unmute logic
+
+const muteUnmuteButton = document.querySelector("#mute-unmute-button");
+console.log(muteUnmuteButton);
+
+const muteUnmuteImg = document.querySelector("#mute-unmute-img");
+console.log(muteUnmuteImg);
+
+// now I want to create a function so that the user can interact with the button
+muteUnmuteButton.addEventListener("click", toggleSound);
+
+function toggleSound() {
+  if (video.muted == true) {
+    video.muted = false;
+    muteUnmuteImg.src =
+      "https://img.icons8.com/ios-glyphs/30/high-volume--v2.png";
+  } else {
+    video.muted = true;
+    muteUnmuteImg.src = "https://img.icons8.com/ios-glyphs/30/no-audio--v1.png";
+  }
+}
+
+// fast forward & rewind logic
+
+const rewindButton = document.querySelector("#rewind-button");
+console.log(rewindButton);
+
+const fastForwardButton = document.querySelector("#fast-forward-button");
+console.log(fastForwardButton);
+
+// now I want to create a function so that the user can interact with the rewind button
+rewindButton.addEventListener("click", goBack);
+// now I want to create a function so that the user can interact with the fast forward button
+fastForwardButton.addEventListener("click", goForward);
+
+function goBack() {
+  // go back 10 seconds
+  video.currentTime -= 10;
+}
+
+function goForward() {
+  // go forward 10 seconds
+  video.currentTime += 10;
+}
+
+// heart button logic
+
+const heartButton = document.querySelector("#heart-button");
+console.log(heartButton);
+
+// Now I need to get access to the likes count so it can be displayed besides the heart button
+const likes = document.querySelector("#likes");
+console.log(likes);
+
+// then I need to use a let variable to make the like count increase on click
+let = likesCount = 0;
+
+heartButton.addEventListener("click", addLike);
+
+function addLike() {
+  likesCount++;
+  console.log(likesCount);
+
+  //   Here I am adding a function to display the likes count
+  likes.textContent = likesCount;
+}
+
+// fullscreen logic
+
+const fullscreenButton = document.querySelector("#fullscreen-button");
+console.log(fullscreenButton);
+
+fullscreenButton.addEventListener("click", goFullscreen);
+
+// function to make video go fullscreen on doubleclick
+video.addEventListener("dblclick", goFullscreen);
+
+function goFullscreen() {
+  if (!document.fullscreenElement) {
+    video.requestFullscreen();
+  } else {
+    document.exitFullscreen();
+  }
+}

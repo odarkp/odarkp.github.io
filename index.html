@@ -10,6 +10,9 @@
       href="https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100..900;1,100..900&family=Tuffy:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://use.typekit.net/zfe7itu.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ebv7egz.css">
+    
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
@@ -20,15 +23,13 @@
       <h1>Media Player Website</h1>
     </header>
 
-    <h2>Assignment created by Oda Roenning Kraft-Pettersen (s4232439)</h2>
-
     <!-- Navigation Section -->
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About me</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="favorites.html ">Favorites</a></li>
+        <li><button id="home-button"><a href="index.html">Home</a></button></li>
+        <li><button id="about-button"><a href="about.html">About</a></button></li>
+        <li><button id="contact-button"><a href="contact.html">Contact</a></button></li>
+        <li><button id="favorites-button"><a href="favorites.html">Favorites</a></button></li>
         <!-- Add or remove navigation items as needed -->
       </ul>
     </nav>
@@ -47,6 +48,7 @@
             type="video/mp4"
           />
         </video>
+
         <div class="custom-controls">
           <button id="play-pause-btn" onclick="togglePlayPause()">
             <img
@@ -57,12 +59,60 @@
               height="24"
             />
           </button>
+
+
           <!-- add the missing buttons or functionality here -->
-          <div class="progress-bar">
+            <button id="mute-unmute-button" class="double-border">
+          <img
+            src="https://img.icons8.com/ios-glyphs/30/no-audio--v1.png"
+            alt=""
+            id="mute-unmute-img"
+          />
+        </button>
+
+          <button id="rewind-button" class="double-border">
+          <img
+            src="https://img.icons8.com/ios-glyphs/30/rewind.png"
+            alt=""
+            id="rewind-img"
+          />
+        </button>
+
+
+        <button id="fast-forward-button" class="double-border">
+          <img
+            src="https://img.icons8.com/ios-glyphs/30/fast-forward.png"
+            alt=""
+            id="fast-forward-img"
+          />
+        </button>
+       
+
+
+        <div class="progress-bar">
             <span id="progress-bar-fill"></span>
           </div>
-        </div>
+
+
+        <button id="fullscreen-button" class="double-border">
+          <img
+            src="https://img.icons8.com/ios-glyphs/30/full-screen--v1.png"
+            alt=""
+            id="fullscreen-img"
+          />
+        </button>
+
+
+        <button id="heart-button" class="double-border">
+          <img
+            src="https://img.icons8.com/?size=36&id=DFU1kReSUccu&format=png&color=000000"
+            alt=""
+            id="fullscreen-img"
+          />
+        </button>
+        <div id="likes"></div>
       </div>
+          
 
       <!-- Additional Content Section -->
       <section>
@@ -74,11 +124,13 @@
 
     <!-- Footer Section -->
     <footer>
+      <h2>Assignment created by Oda Roenning Kraft-Pettersen (s4232439)</h2>
       <p>&copy; 2024 Media Player Website. All rights reserved.</p>
-      <a href="https://icons8.com/icon/59862/play">Play</a> icon by
+      <!-- <a href="https://icons8.com/icon/59862/play">Play</a> icon by
       <a href="https://icons8.com">Icons8</a>
       <a href="https://icons8.com/icon/61012/pause">Pause</a> icon by
-      <a href="https://icons8.com">Icons8</a>
+      <a href="https://icons8.com">Icons8</a> -->
+      <a> All Icons by </a><a href="https://icons8.com">Icons8</a> 
     </footer>
   </body>
 </html>

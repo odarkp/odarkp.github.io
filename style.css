@@ -1,9 +1,9 @@
 :root {
   --primary-bg-color: #f4f4f4;
-  --text-color: #333;
-  --main-bg-color: #333;
+  --text-color: #260817;
+  --main-bg-color: #e372ff84;
   --main-text-color: #fff;
-  --main-btn-bg-color: #938989;
+  --main-btn-bg-color: #fff;
 }
 
 body,
@@ -15,7 +15,7 @@ ul {
 }
 
 body {
-  font-family: "tuffy", sans-serif;
+  font-family: cc-pixel-arcade-cartridge;
   background-color: var(--primary-bg-color);
   color: var(--text-color);
   line-height: 1.6;
@@ -33,12 +33,17 @@ h2 {
 }
 
 h3 {
-  font-size: 20px;
+  font-family: "solvent";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
   margin: 10px;
   padding: 10px;
+  color: #260817;
 }
 
 h4 {
+  font-family: "alta-california";
   font-style: italic;
 }
 
@@ -79,6 +84,22 @@ nav a {
   color: var(--text-color);
 }
 
+button {
+  font-size: 1rem;
+  background-color: var(--primary-color);
+  border-radius: 15px;
+  padding: 8px;
+  opacity: 80%;
+  /* cursor - pointer makes the mouse into a pointer upon hover */
+  cursor: pointer;
+}
+
+button:hover {
+  scale: 1.1;
+  background: #e372ffbf;
+  opacity: 100%;
+}
+
 /* Media player styling */
 .media-player {
   width: 100%;
@@ -99,30 +120,89 @@ nav a {
 }
 
 .custom-controls button {
-  background-color: var(--main-btn-bg-color);
+  background-color: #ffffff;
   color: var(--main-text-color);
-  border: none;
-  padding: 8px 12px;
+  width: 50px;
+  height: 50px;
+  border: 0px;
+  border-radius: 100%;
+  padding: 10px 10px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 12px;
   display: flex;
   align-items: center;
+  justify-content: space-around;
+  flex-shrink: 0;
 }
+
+/* in Assignment 2 I can use flexbox to arrange the buttons */
 
 .progress-bar {
   width: 100%;
   height: 10px;
-  background-color: #ddd;
-  margin-top: 10px;
+  background-color: #ffffff;
+  opacity: 80%;
+  margin-top: 0px;
   overflow: hidden;
 }
 
 .progress-bar span {
   display: block;
   height: 100%;
-  background-color: var(--main-bg-color);
+  background-color: #c175d4;
   width: 0;
   transition: width 0.3s ease;
+}
+
+/* animated background
+body {
+  animation: backgroundShift 8s infinite alternate;
+  animation-play-state: paused;
+}
+
+/* define the colors */
+/*@keyframes backgroundShift {
+  0% {
+    background-color: #f5ccff;
+  }
+
+  50% {
+    background-color: #d38fe4;
+  }
+
+  100% {
+    background-color: #c075d3;
+  }
+} */
+
+body {
+  background: linear-gradient(
+    270deg,
+    #ffffff,
+    #eda6ff,
+    #a8b1ff,
+    #cb83ff,
+    #6f70cd,
+    #f3c1ff
+  );
+  background-size: 600% 600%;
+
+  animation: gradientShift 12s ease infinite;
+  animation-play-state: paused;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Footer styling */
