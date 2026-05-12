@@ -8,7 +8,6 @@
 
 body,
 h1,
-h2,
 p,
 ul {
   margin: 0;
@@ -16,7 +15,7 @@ ul {
 }
 
 body {
-  font-family: "Arial", sans-serif;
+  font-family: "tuffy", sans-serif;
   background-color: var(--primary-bg-color);
   color: var(--text-color);
   line-height: 1.6;
@@ -27,6 +26,21 @@ body {
 }
 
 /* Add additional styles as needed */
+
+h2 {
+  font-size: small;
+  margin-top: 10px;
+}
+
+h3 {
+  font-size: 20px;
+  margin: 10px;
+  padding: 10px;
+}
+
+h4 {
+  font-style: italic;
+}
 
 /* Create a container for the main content */
 .container {
@@ -42,10 +56,6 @@ header {
   padding: 10px 0;
   text-align: center;
   width: 100%;
-}
-.sub-heading {
-  font-size: 10px;
-  padding: 10px 0;
 }
 
 /* Navigation styling */
@@ -71,21 +81,7 @@ nav a {
 
 /* Media player styling */
 .media-player {
-  background-color: #1a120b;
-  display: flex;
-  text-align: center;
-  margin: auto;
-  max-width: 1000px;
-  justify-content: center;
-  align-items: center;
-  font-family: "Space Grotesk", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  color: #e5e5cb;
-  /* color: #3c2a21; */
-  font-size: 1.1rem;
-  width: 150%;
+  width: 100%;
   margin: 0 auto;
 }
 
