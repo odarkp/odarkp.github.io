@@ -55,6 +55,51 @@ function toggleSound() {
   }
 }
 
+// volume change logic
+
+const lowVolumeButton = document.querySelector("#low-volume-button");
+console.log(lowVolumeButton);
+
+const highVolumeButton = document.querySelector("#high-volume-button");
+console.log(highVolumeButton);
+
+// now I want to create a function so that the user can interact with the buttons
+lowVolumeButton.addEventListener("click", lowerSound);
+
+function lowerSound() {
+  video.volume -= 0.5;
+}
+
+highVolumeButton.addEventListener("click", higherSound);
+
+function higherSound() {
+  video.volume += 0.5;
+}
+
+// skip to start & end logic
+
+const skipToStartButton = document.querySelector("#skip-to-start-button");
+console.log(skipToStartButton);
+
+const skipToEndButton = document.querySelector("#skip-to-end-button");
+console.log(skipToEndButton);
+
+// now I want to create a function so that the user can interact with the skip to start button
+skipToStartButton.addEventListener("click", skipToStart);
+
+// now I want to create a function so that the user can interact with skip to end button
+skipToEndButton.addEventListener("click", skipToEnd);
+
+function skipToStart() {
+  // go to start
+  video.currentTime = 0;
+}
+
+function skipToEnd() {
+  // go to end
+  video.currentTime = 240;
+}
+
 // fast forward & rewind logic
 
 const rewindButton = document.querySelector("#rewind-button");
@@ -78,6 +123,40 @@ function goForward() {
   video.currentTime += 10;
 }
 
+// fullscreen logic
+
+const fullscreenButton = document.querySelector("#fullscreen-button");
+console.log(fullscreenButton);
+
+fullscreenButton.addEventListener("click", goFullscreen);
+
+// function to make video go fullscreen on doubleclick
+video.addEventListener("dblclick", goFullscreen);
+
+function goFullscreen() {
+  if (!document.fullscreenElement) {
+    video.requestFullscreen();
+  } else {
+    document.exitFullscreen();
+  }
+}
+
+// replay logic
+
+const replayButton = document.querySelector("#replay-button");
+console.log(replayButton);
+
+// function to make video replay
+replayButton.addEventListener("click", replayVideo);
+
+function replayVideo() {
+  // go back to start of video
+  video.currentTime = 0;
+
+  // then I automatically make the video play again
+  video.play();
+}
+
 // heart button logic
 
 const heartButton = document.querySelector("#heart-button");
@@ -98,22 +177,4 @@ function addLike() {
 
   //   Here I am adding a function to display the likes count
   likes.textContent = likesCount;
-}
-
-// fullscreen logic
-
-const fullscreenButton = document.querySelector("#fullscreen-button");
-console.log(fullscreenButton);
-
-fullscreenButton.addEventListener("click", goFullscreen);
-
-// function to make video go fullscreen on doubleclick
-video.addEventListener("dblclick", goFullscreen);
-
-function goFullscreen() {
-  if (!document.fullscreenElement) {
-    video.requestFullscreen();
-  } else {
-    document.exitFullscreen();
-  }
 }
