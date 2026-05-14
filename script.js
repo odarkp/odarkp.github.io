@@ -35,7 +35,6 @@ if (video) {
     const value = (video.currentTime / video.duration) * 100;
     progressBar.style.width = value + "%";
   }
-  // Add other functionalities here
 
   // mute unmute logic
 
