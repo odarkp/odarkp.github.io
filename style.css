@@ -27,24 +27,44 @@ body {
 
 /* Add additional styles as needed */
 
+h1 {
+  font-family: "cc-pixel-arcade-cartridge";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 0px;
+  padding: 0px;
+}
+
 h2 {
+  font-family: "cc-pixel-arcade-display";
   font-size: small;
   margin-top: 10px;
 }
 
 h3 {
-  font-family: "solvent";
+  font-family: "alta-california";
   font-weight: 400;
   font-style: normal;
-  font-size: 50px;
+  font-size: 5rem;
   margin: 10px;
   padding: 10px;
   color: #260817;
 }
 
 h4 {
-  font-family: "alta-california";
+  font-family: "cc-pixel-arcade-display";
   font-style: italic;
+  text-align: center;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+p {
+  margin-top: 15px;
+  font-family: monospace;
+  text-align: center;
 }
 
 /* Create a container for the main content */
@@ -84,14 +104,40 @@ nav a {
   color: var(--text-color);
 }
 
+.nav-button {
+  margin-top: 20px;
+}
+
+.nav-button a:visited {
+  color: var(--text-color);
+}
+
+.nav-button a:hover {
+  color: var(--text-color);
+}
+
+.nav-button a,
+.nav-button a:visited,
+.nav-button a:hover,
+.nav-button a:active {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
 button {
+  font-family: "cc-pixel-arcade-cartridge";
   font-size: 1rem;
   background-color: var(--primary-color);
-  min-height: 20px;
+  min-height: 50px;
   min-width: 50px;
+  border-style: dotted;
   border-radius: 15px;
   padding: 10px;
   opacity: 80%;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   /* cursor - pointer makes the mouse into a pointer upon hover */
   cursor: pointer;
 }
@@ -188,7 +234,7 @@ button:hover {
   height: 10px;
   background-color: #ffffff;
   opacity: 80%;
-  margin-top: 22px;
+  margin-top: 21px;
   overflow: hidden;
 }
 
@@ -201,7 +247,39 @@ button:hover {
 }
 
 .like-count {
-  margin-top: 13px;
+  margin-top: 11px;
+}
+
+.additional-content {
+  line-height: 1.6;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-additional-content {
+  margin-top: 75px;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  margin: 50px;
+  margin-top: 100px;
+  opacity: 80%;
+}
+
+.instagram:hover,
+.spotify:hover,
+.youtube:hover,
+.mail:hover {
+  scale: 1.1;
+  opacity: 100%;
 }
 
 /* animated background
@@ -260,6 +338,52 @@ footer {
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
   text-align: center;
+  margin-top: 20px;
   padding: 10px 0;
   width: 100%;
+}
+
+/* dark background overlay */
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* to hide popup when not clicked */
+.hidden {
+  display: none;
+}
+
+/* popup box */
+.popup-content {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  width: 500px;
+}
+
+/* icons row */
+.popup-icons {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  margin: 50px;
+  gap: 50px;
+}
+
+.popup-icons img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.2s ease;
+}
+
+.popup-icons img:hover {
+  transform: scale(1.2);
 }

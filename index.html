@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
+
   <body>
     <!-- Header Section -->
     <header>
@@ -27,27 +28,29 @@
     <nav>
       <ul>
         <li>
-          <button id="home-button"><a href="index.html">Home</a></button>
+          <button class="nav-button"><a href="index.html">Home</a></button>
         </li>
         <li>
-          <button id="about-button"><a href="about.html">About</a></button>
+          <button class="nav-button"><a href="about.html">About</a></button>
         </li>
         <li>
-          <button id="contact-button">
-            <a href="contact.html">Contact</a>
+          <button class="nav-button"><a href="contact.html">Contact</a>
           </button>
         </li>
         <li>
-          <button id="favorites-button">
-            <a href="favorites.html">Favorites</a>
+          <button id="share-button" class="nav-button">
+            <img src="https://img.icons8.com/?size=100&id=Kq2hrI8NUpBY&format=png&color=000000"
+            alt="share-button"
+            width="24"
+            height="24">
           </button>
         </li>
-        <!-- Add or remove navigation items as needed -->
       </ul>
     </nav>
-
-    <h3>Music Video</h3>
-
+    
+    <h4>Hello, we are...</h4>
+    <h3>"The Band"</h3>
+    <h4>check out our latest music video!</h4>
     <h4>Put your headphones on and stay awhile.</h4>
 
     <!-- Main Content Section -->
@@ -55,6 +58,7 @@
 
       <!-- Media Player Section -->
       <div class="media-player">
+        
         <img src="vintageTV2.png" alt="vintage tv" class="tv-image" />
         <video id="custom-video-player" class="tv-video" controls>
           <source
@@ -65,114 +69,145 @@
 
 
         <div class="custom-controls">
-        <!-- add the missing buttons or functionality here -->
+        <!-- here I added missing funtions and buttons-->
          
+
           <button id="replay-button" class="double-border">
           <img
-            src="https://img.icons8.com/ios-glyphs/30/replay.png"
+            src="https://img.icons8.com/?size=100&id=1H593lDVpMEk&format=png&color=000000"
             alt=""
             id="replay-img"
           />
         </button>
 
+
         <button id="mute-unmute-button" class="double-border">
           <img
-            src="https://img.icons8.com/ios-glyphs/30/no-audio--v1.png"
+            src="https://img.icons8.com/?size=100&id=dc6K5qHhfI1u&format=png&color=000000"
             alt=""
             id="mute-unmute-img"
           />
         </button>
 
+
         <button id="low-volume-button" class="double-border">
           <img
-            src="https://img.icons8.com/ios-glyphs/30/low-volume.png"
+            src="https://img.icons8.com/?size=100&id=HvbAce2HcdY1&format=png&color=000000"
             alt=""
             id="low-volume-img"
           />
         </button>
 
+
         <button id="high-volume-button" class="double-border">
           <img
-            src="https://img.icons8.com/ios-glyphs/30/high-volume--v1.png"
+            src="https://img.icons8.com/?size=100&id=T1jM9CNlVKCy&format=png&color=000000"
             alt=""
             id="high-volume-img"
           />
         </button>
 
+
                 <button id="fast-forward-button" class="double-border">
           <img
-            src="https://img.icons8.com/ios-glyphs/30/fast-forward.png"
+            src="https://img.icons8.com/?size=100&id=HZQe6SNnTgFe&format=png&color=000000"
             alt=""
             id="fast-forward-img"
           />
         </button>
 
+
         <button id="skip-to-end-button" class="double-border">
           <img
-            src="https://img.icons8.com/ios-glyphs/30/end--v2.png"
+            src="https://img.icons8.com/?size=100&id=M3tZfmoHiYUd&format=png&color=000000"
             alt=""
             id="skip-to-end-img"
           />
         </button>
+
+
          <button id="rewind-button" class="double-border">
           <img
-            src="https://img.icons8.com/ios-glyphs/30/rewind.png"
+            src="https://img.icons8.com/?size=100&id=SoCBx5RqAe5P&format=png&color=000000"
             alt=""
             id="rewind-img"
           />
         </button>
 
+
         <button id="skip-to-start-button" class="double-border">
           <img
-            src="https://img.icons8.com/ios-glyphs/30/skip-to-start--v2.png"
+            src="https://img.icons8.com/?size=100&id=uBOxuKr9pvrF&format=png&color=000000"
             alt=""
             id="skip-to-start-img"
           />
         </button>
 
-      
         </div>
 
         </div>
      
+
 <div class="under-tv">
+
  <button id="play-pause-btn" onclick="togglePlayPause()">
           <img
             id="play-pause-img"
-            src="https://img.icons8.com/ios-glyphs/30/play--v1.png"
+            src="https://img.icons8.com/?size=100&id=KVmY50QrSUEu&format=png&color=000000"
             alt="Play Button"
             width="24"
             height="24"
           />
         </button>
+
+        
           <div class="progress-bar">
           <span id="progress-bar-fill"></span>
         </div>
+
+
           <button id="fullscreen-button" class="double-border">
           <img
-            src="https://img.icons8.com/ios-glyphs/30/full-screen--v1.png"
+            src="https://img.icons8.com/?size=100&id=7KJN0U2tD3n7&format=png&color=000000"
             alt=""
             id="fullscreen-img"
+            width="24"
+            height="24"
           />
         </button>
+
+
            <button id="heart-button" class="double-border">
           <img
-            src="https://img.icons8.com/?size=36&id=DFU1kReSUccu&format=png&color=000000"
+            src="https://img.icons8.com/?size=100&id=sQxobwC94boi&format=png&color=000000"
             alt=""
-            id="fullscreen-img"
+            id="heart-img"
+            width="24"
+            height="24"
           />
         </button>
+
+
          <div id="likes" class="like-count"></div>
+
+
       </div>
        
       
 </div>
 
+
       <!-- Additional Content Section -->
-      <section>
-        <h1>Curious for more?</h1>
-        <p>This is where you can showcase any other relevant content.</p>
-        <!-- Add more content as needed -->
+      <section class="additional-content">
+
+
+        <h1>Curious for more? Check out our about page!</h1>
+
+
+        <button class="nav-button">
+            <a href="about.html">click me</a>
+          </button>
+
       </section>
     </main>
 
@@ -184,7 +219,55 @@
       <a href="https://icons8.com">Icons8</a>
       <a href="https://icons8.com/icon/61012/pause">Pause</a> icon by
       <a href="https://icons8.com">Icons8</a> -->
-      <a> All Icons by </a><a href="https://icons8.com">Icons8</a>
+      <p><a> All Icons by </a><a href="https://icons8.com">Icons8</a></p>
     </footer>
+
+
+    <!-- Share Popup Section -->
+<div id="share-popup" class="popup hidden">
+
+  <div class="popup-content">
+
+    <h1>Please share our music!</h1>
+
+
+    <div class="popup-icons">
+
+     <a href="socials.html" class="instagram">
+  <img
+    src="https://img.icons8.com/?size=100&id=yc2dJ0jTSu8L&format=png&color=000000"
+    alt="Instagram Icon"
+    width="100" 
+  />
+</a>
+
+<a href="socials.html" class="spotify">
+  <img
+    src="https://img.icons8.com/?size=100&id=bLhnvHtf8jQB&format=png&color=000000"
+    alt="Spotify Icon"
+    width="100"
+  />
+</a>
+
+<a href="socials.html" class="youtube">
+  <img
+    src="https://img.icons8.com/?size=100&id=uZIMz8rZqfcW&format=png&color=000000"
+    alt="YouTube Icon"
+    width="100"
+  />
+</a>
+
+<a href="socials.html" class="mail">
+  <img
+    src="https://img.icons8.com/?size=100&id=pRezTnlZ3Oab&format=png&color=000000"
+    alt="Mail Icon"
+    width="100"
+  />
+</a>
+    </div>
+    
+</div>
+
+
   </body>
 </html>

@@ -4,72 +4,167 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <!-- add the font family of your choice -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100..900;1,100..900&family=Tuffy:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/zfe7itu.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/ebv7egz.css" />
+
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
+
   <body>
     <!-- Header Section -->
     <header>
       <h1>Media Player Website</h1>
     </header>
 
-    <h2>Assignment created by Oda Roenning Kraft-Pettersen (s4232439)</h2>
-
     <!-- Navigation Section -->
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About me</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="favorites.html ">Favorites</a></li>
-        <!-- Add or remove navigation items as needed -->
+        <li>
+          <button class="nav-button"><a href="index.html">Home</a></button>
+        </li>
+        <li>
+          <button class="nav-button"><a href="about.html">About</a></button>
+        </li>
+        <li>
+          <button class="nav-button"><a href="contact.html">Contact</a>
+          </button>
+        </li>
+        <li>
+          <button id="share-button" class="nav-button">
+            <img src="https://img.icons8.com/?size=100&id=Kq2hrI8NUpBY&format=png&color=000000"
+            alt="share-button"
+            width="24"
+            height="24">
+          </button>
+        </li>
       </ul>
     </nav>
+    
+    <h3>Want to find more?</h3>
 
-    <!-- Main Content Section -->
-    <main class="container">
-      <!-- Media Player Section -->
-      <div class="media-player">
-        <video id="custom-video-player" controls>
-          <source
-            src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4"
-            type="video/mp4"
-          />
-        </video>
-        <div class="custom-controls">
-          <button id="play-pause-btn" onclick="togglePlayPause()">
-            <img
-              id="play-pause-img"
-              src="https://img.icons8.com/ios-glyphs/30/play--v1.png"
-              alt="Play Button"
-              width="24"
-              height="24"
-            />
-          </button>
-          <!-- add the missing buttons or functionality here -->
-          <div class="progress-bar">
-            <span id="progress-bar-fill"></span>
-          </div>
-        </div>
-      </div>
+    <h4>
+      Check out our socials and get in touch with us!
+    </h4>
 
+    <!-- then I insert different social media icons that users can click on to be redirected -->
+<div class="social-icons">
+
+    <a href="socials.html" class="instagram">
+  <img
+    src="https://img.icons8.com/?size=100&id=yc2dJ0jTSu8L&format=png&color=000000"
+    alt="Instagram Icon"
+    width="100"
+  />
+</a>
+
+<a href="socials.html" class="spotify">
+  <img
+    src="https://img.icons8.com/?size=100&id=bLhnvHtf8jQB&format=png&color=000000"
+    alt="Spotify Icon"
+    width="100"
+  />
+</a>
+
+<a href="socials.html" class="youtube">
+  <img
+    src="https://img.icons8.com/?size=100&id=uZIMz8rZqfcW&format=png&color=000000"
+    alt="YouTube Icon"
+    width="100"
+  />
+</a>
+
+<a href="socials.html" class="mail">
+  <img
+    src="https://img.icons8.com/?size=100&id=pRezTnlZ3Oab&format=png&color=000000"
+    alt="Mail Icon"
+    width="100"
+  />
+</a>
+
+
+</div>
+  
       <!-- Additional Content Section -->
-      <section>
-        <h2>Additional Content</h2>
-        <p>This is where you can showcase any other relevant content.</p>
-        <!-- Add more content as needed -->
+      <section class="additional-content">
+
+
+        <h1 class="about-additional-content">Want to see the music video again?</h1>
+
+
+        <button class="nav-button">
+            <a href="index.html">click me</a>
+          </button>
+
+
+        </div>
       </section>
     </main>
 
     <!-- Footer Section -->
     <footer>
+      <h2>Assignment created by Oda Roenning Kraft-Pettersen (s4232439)</h2>
       <p>&copy; 2024 Media Player Website. All rights reserved.</p>
-      <a href="https://icons8.com/icon/59862/play">Play</a> icon by
+      <!-- <a href="https://icons8.com/icon/59862/play">Play</a> icon by
       <a href="https://icons8.com">Icons8</a>
       <a href="https://icons8.com/icon/61012/pause">Pause</a> icon by
-      <a href="https://icons8.com">Icons8</a>
+      <a href="https://icons8.com">Icons8</a> -->
+      <p><a> All Icons by </a><a href="https://icons8.com">Icons8</a></p>
     </footer>
+
+
+ <!-- Share Popup Section -->
+<div id="share-popup" class="popup hidden">
+
+  <div class="popup-content">
+    
+    <h1>Please share our music!</h1>
+
+
+    <div class="popup-icons">
+
+     <a href="socials.html" class="instagram">
+  <img
+    src="https://img.icons8.com/?size=100&id=yc2dJ0jTSu8L&format=png&color=000000"
+    alt="Instagram Icon"
+    width="100" 
+  />
+</a>
+
+<a href="socials.html" class="spotify">
+  <img
+    src="https://img.icons8.com/?size=100&id=bLhnvHtf8jQB&format=png&color=000000"
+    alt="Spotify Icon"
+    width="100"
+  />
+</a>
+
+<a href="socials.html" class="youtube">
+  <img
+    src="https://img.icons8.com/?size=100&id=uZIMz8rZqfcW&format=png&color=000000"
+    alt="YouTube Icon"
+    width="100"
+  />
+</a>
+
+<a href="socials.html" class="mail">
+  <img
+    src="https://img.icons8.com/?size=100&id=pRezTnlZ3Oab&format=png&color=000000"
+    alt="Mail Icon"
+    width="100"
+  />
+</a>
+    </div>
+    
+</div>
+
+
   </body>
 </html>
