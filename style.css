@@ -1,3 +1,7 @@
+/* This is the style.css file for "The Band" website.
+It contains all the CSS styles for the website, including the layout, colors, fonts, and a background animation!
+The styles are organized into sections for the body, headers, paragraphs, container, navigation, buttons, media player, additional content, social icons, and footer. */
+
 :root {
   --primary-bg-color: #f4f4f4;
   --text-color: #260817;
@@ -6,6 +10,7 @@
   --main-btn-bg-color: #fff;
 }
 
+/* I have ensured that the body, h1, p, and ul elements have no default margin or padding, which allows for more precise control over the layout and spacing of the website. */
 body,
 h1,
 p,
@@ -14,6 +19,8 @@ ul {
   padding: 0;
 }
 
+/* I made the body flex-container and set the flex-direction to column, so that the header, main content, and footer are arranged vertically.
+I also centered the body, to ensures that the layout is clean and organized, with clear separation between different sections of the website. */
 body {
   font-family: cc-pixel-arcade-cartridge;
   background-color: var(--primary-bg-color);
@@ -27,6 +34,10 @@ body {
 
 /* Add additional styles as needed */
 
+/* I chose the different fonts because I wanted to create a fun and playful aesthetic for the website, which is fitting for a band.
+The "cc-pixel-arcade-cartridge" font gives a retro gaming feel, while the "alta-california" font adds a touch of uniqueness.
+The combination of these fonts creates a memorable visual identity for the band, which can help to attract and engage fans, as well as it creates a visual hierarchy
+that makes it easier for users to navigate the website and find the information they are looking for. */
 h1 {
   font-family: "cc-pixel-arcade-cartridge";
   font-weight: 400;
@@ -67,7 +78,7 @@ p {
   text-align: center;
 }
 
-/* Create a container for the main content */
+/* Created a container for the main content */
 .container {
   max-width: 1000px;
   width: 100%;
@@ -84,6 +95,7 @@ header {
 }
 
 /* Navigation styling */
+/* Here I focused on creating an organized layout for the navigation menu, which is an important part of the website's user experience. */
 nav {
   margin-top: 20px;
   text-align: center;
@@ -133,7 +145,7 @@ button {
   border-style: dotted;
   border-radius: 15px;
   padding: 10px;
-  opacity: 80%;
+  opacity: 0.8;
   margin-bottom: 50px;
   display: flex;
   align-items: center;
@@ -142,10 +154,11 @@ button {
   cursor: pointer;
 }
 
+/* Here I am adding a hover effect to the buttons, adding interactivity and visual feedback to the buttons, making them more engaging for users. */
 button:hover {
   scale: 1.1;
   background: #e372ffbf;
-  opacity: 100%;
+  opacity: 1;
 }
 
 /* Media player styling */
@@ -162,16 +175,18 @@ button:hover {
   display: block;
 }
 
+/* Here I tweaked a lot of the styling for the media player, to ensure that the video is properly positioned within the TV image. */
 .media-player video {
   position: absolute;
   top: 119px;
   left: 95px;
   width: 640px;
-  height: px;
+  height: 360px;
   object-fit: cover;
   border-radius: 30px;
 }
 
+/* In the custom control styling I added a grid layout to ensure that the buttons on the tv are properly aligned and spaced in a grid system.*/
 .custom-controls {
   position: absolute;
   top: 250px;
@@ -185,14 +200,7 @@ button:hover {
   z-index: 10;
 }
 
-/* display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 10px;
-  width: 100%;
-} */
-
+/* Here I am styling the buttons for the media player, which are placed on top of the TV image. */
 .custom-controls button {
   background-color: none;
   color: var(--main-text-color);
@@ -210,14 +218,14 @@ button:hover {
   transition: all 0.2s ease;
 }
 
+/* I also added a hover effect to the buttons to make them more interactive and visually appealing.  */
 .custom-controls button:hover {
   transform: scale(1.02);
 
   background-color: #8476ba;
 }
 
-/* in Assignment 2 I can use flexbox to arrange the buttons */
-
+/* This is the styling for the buttons and progressbar under the TV. */
 .under-tv {
   position: relative;
   top: -40px;
@@ -233,7 +241,7 @@ button:hover {
   width: 750px;
   height: 10px;
   background-color: #ffffff;
-  opacity: 80%;
+  opacity: 0.8;
   margin-top: 21px;
   overflow: hidden;
 }
@@ -246,6 +254,7 @@ button:hover {
   transition: width 0.3s ease;
 }
 
+/* I tweaked the like count margin to align it to the center of the heart button. */
 .like-count {
   margin-top: 11px;
 }
@@ -271,38 +280,20 @@ button:hover {
   gap: 50px;
   margin: 50px;
   margin-top: 100px;
-  opacity: 80%;
+  opacity: 0.8;
 }
 
+/* Here I am adding a hover effect to the social media icons, to make them more interactive and visually appealing.*/
 .instagram:hover,
 .spotify:hover,
 .youtube:hover,
 .mail:hover {
   scale: 1.1;
-  opacity: 100%;
+  opacity: 1;
 }
 
-/* animated background
-body {
-  animation: backgroundShift 8s infinite alternate;
-  animation-play-state: paused;
-}
-
-/* define the colors */
-/*@keyframes backgroundShift {
-  0% {
-    background-color: #f5ccff;
-  }
-
-  50% {
-    background-color: #d38fe4;
-  }
-
-  100% {
-    background-color: #c075d3;
-  }
-} */
-
+/* In this section of the body styling I created a linear gradient background that shifts colors over time in sync with the video,
+creating a dynamic and visually engaging backdrop for the website. */
 body {
   background: linear-gradient(
     270deg,
@@ -315,10 +306,13 @@ body {
   );
   background-size: 600% 600%;
 
+  /* This is the animation for the background gradient, which shifts the background colors over a time of 12s. */
   animation: gradientShift 12s ease infinite;
   animation-play-state: paused;
 }
 
+/* This is the styling for the gradient shift positioning in the background animation, to make the background animation colors flow and look more like waves,
+creating a dynamic visual effect. */
 @keyframes gradientShift {
   0% {
     background-position: 0% 50%;
@@ -343,7 +337,7 @@ footer {
   width: 100%;
 }
 
-/* dark background overlay */
+/* This is styling for the dark background overlay that shows when you open the pop-up*/
 .popup {
   position: fixed;
   width: 100%;
@@ -354,12 +348,12 @@ footer {
   justify-content: center;
 }
 
-/* to hide popup when not clicked */
+/* This is the styling to hide popup when not clicked */
 .hidden {
   display: none;
 }
 
-/* popup box */
+/* Popup box content styling */
 .popup-content {
   background: white;
   padding: 30px;
@@ -368,7 +362,8 @@ footer {
   width: 500px;
 }
 
-/* icons row */
+/* The styling for the social media icons in the pop-up content, which are displayed in a row and
+have a hover effect to make them more interactive and visually appealing. */
 .popup-icons {
   display: flex;
   justify-content: space-around;

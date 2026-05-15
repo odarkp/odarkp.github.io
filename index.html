@@ -1,11 +1,20 @@
+<!-- Hi Rohit! This is my submission for Assignment 2 for the Interactive Media course.
+I have created a media player website, focusing on the category "music video" with a custom video player and various controls.
+The website includes a header, navigation, main content with the media player, and a footer. I have also implemented a share popup,
+that allows users to share "The Band's" music on social media platforms.
+I have included three seperate HTML pages aswell: contact.html, about.html and socials.html. -->
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>The Band | Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Under here I am linking to the fonts I have used for the website. I focused on finding fonts that I believe fit the aesthetic of the music video,
+    to contribute to a cohesive and visually pleasing design. -->
     <link
       href="https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100..900;1,100..900&family=Tuffy:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
@@ -13,6 +22,9 @@
     <link rel="stylesheet" href="https://use.typekit.net/zfe7itu.css" />
     <link rel="stylesheet" href="https://use.typekit.net/ebv7egz.css" />
 
+    <!-- Under here I am linking to the CSS and JavaScript files for the website.
+    The CSS files include a reset stylesheet to ensure consistent styling across different browsers, and a custom stylesheet for the website's design.
+    The JavaScript file contains the functionality for the media player and other interactive elements on the website. -->
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
@@ -24,7 +36,8 @@
       <h1>Media Player Website</h1>
     </header>
 
-    <!-- Navigation Section -->
+    <!-- Navigation Section - Here I have added navigation links for the different pages to create a more interactive user experience,
+    as well as a share button that opens a share popup.-->
     <nav>
       <ul>
         <li>
@@ -59,6 +72,7 @@
       <!-- Media Player Section -->
       <div class="media-player">
         
+        <!-- To create a unique and visually appealing design for the website, I drew a vintage TV with Adobe Fresco, and used it as a frame for the video player. -->
         <img src="vintageTV2.png" alt="vintage tv" class="tv-image" />
         <video id="custom-video-player" class="tv-video" controls>
           <source
@@ -69,8 +83,7 @@
 
 
         <div class="custom-controls">
-        <!-- here I added missing funtions and buttons-->
-         
+        <!-- here I added missing buttons. I designed custom controls that fit the vintage TV, to create a cohesive, interactive and visually appealing design-->
 
           <button id="replay-button" class="double-border">
           <img
@@ -150,6 +163,9 @@
 
 <div class="under-tv">
 
+  <!-- The "under-tv" class is a container for the controls and like button that are placed under the vintage TV.
+   I created this container tocontribute to a more organized and visually appealing layout. -->
+
  <button id="play-pause-btn" onclick="togglePlayPause()">
           <img
             id="play-pause-img"
@@ -189,9 +205,6 @@
 
 
          <div id="likes" class="like-count"></div>
-
-
-      </div>
        
       
 </div>
@@ -223,7 +236,7 @@
     </footer>
 
 
-    <!-- Share Popup Section -->
+    <!-- Share Popup Section - This section contains the popup that appears when the user clicks the share button. -->
 <div id="share-popup" class="popup hidden">
 
   <div class="popup-content">
