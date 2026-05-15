@@ -10,7 +10,6 @@ The styles are organized into sections for the body, headers, paragraphs, contai
   --main-btn-bg-color: #fff;
 }
 
-/* I have ensured that the body, h1, p, and ul elements have no default margin or padding, which allows for more precise control over the layout and spacing of the website. */
 body,
 h1,
 p,
@@ -32,12 +31,10 @@ body {
   justify-content: space-between;
 }
 
-/* Add additional styles as needed */
-
 /* I chose the different fonts because I wanted to create a fun and playful aesthetic for the website, which is fitting for a band.
-The "cc-pixel-arcade-cartridge" font gives a retro gaming feel, while the "alta-california" font adds a touch of uniqueness.
+The "cc-pixel-arcade-cartridge" font gives a retro feel, while the "alta-california" font adds uniqueness.
 The combination of these fonts creates a memorable visual identity for the band, which can help to attract and engage fans, as well as it creates a visual hierarchy
-that makes it easier for users to navigate the website and find the information they are looking for. */
+that makes it easier for users to navigate the website.*/
 h1 {
   font-family: "cc-pixel-arcade-cartridge";
   font-weight: 400;
@@ -78,7 +75,7 @@ p {
   text-align: center;
 }
 
-/* Created a container for the main content */
+/* Container for the main content */
 .container {
   max-width: 1000px;
   width: 100%;
@@ -95,7 +92,7 @@ header {
 }
 
 /* Navigation styling */
-/* Here I focused on creating an organized layout for the navigation menu, which is an important part of the website's user experience. */
+/* Focused on creating an organized layout for the navigation menu - an important part of the website's user experience. */
 nav {
   margin-top: 20px;
   text-align: center;
@@ -154,7 +151,7 @@ button {
   cursor: pointer;
 }
 
-/* Here I am adding a hover effect to the buttons, adding interactivity and visual feedback to the buttons, making them more engaging for users. */
+/* Adding a hover effect to the buttons, adding interactivity and visual feedback to the buttons, making them more engaging for users. */
 button:hover {
   scale: 1.1;
   background: #e372ffbf;
@@ -186,7 +183,7 @@ button:hover {
   border-radius: 30px;
 }
 
-/* In the custom control styling I added a grid layout to ensure that the buttons on the tv are properly aligned and spaced in a grid system.*/
+/* Added a grid layout to ensure that the buttons on the tv are properly aligned and spaced in a grid system.*/
 .custom-controls {
   position: absolute;
   top: 250px;
@@ -200,7 +197,7 @@ button:hover {
   z-index: 10;
 }
 
-/* Here I am styling the buttons for the media player, which are placed on top of the TV image. */
+/* Styling the buttons for the media player, which are placed on top of the TV image. */
 .custom-controls button {
   background-color: none;
   color: var(--main-text-color);
@@ -218,14 +215,14 @@ button:hover {
   transition: all 0.2s ease;
 }
 
-/* I also added a hover effect to the buttons to make them more interactive and visually appealing.  */
+/* Hover effect to make the buttons more interactive and visually appealing.  */
 .custom-controls button:hover {
   transform: scale(1.02);
 
   background-color: #8476ba;
 }
 
-/* This is the styling for the buttons and progressbar under the TV. */
+/* Styling for the buttons and progressbar under the TV. */
 .under-tv {
   position: relative;
   top: -40px;
@@ -283,7 +280,7 @@ button:hover {
   opacity: 0.8;
 }
 
-/* Here I am adding a hover effect to the social media icons, to make them more interactive and visually appealing.*/
+/* Hover effect to make the social media icons more interactive and visually appealing.*/
 .instagram:hover,
 .spotify:hover,
 .youtube:hover,
@@ -292,7 +289,7 @@ button:hover {
   opacity: 1;
 }
 
-/* In this section of the body styling I created a linear gradient background that shifts colors over time in sync with the video,
+/* Created a linear gradient background that shifts colors over time in sync with the video,
 creating a dynamic and visually engaging backdrop for the website. */
 body {
   background: linear-gradient(
@@ -306,12 +303,12 @@ body {
   );
   background-size: 600% 600%;
 
-  /* This is the animation for the background gradient, which shifts the background colors over a time of 12s. */
+  /* Animation for the background gradient, which shifts the background colors over a time of 12s. */
   animation: gradientShift 12s ease infinite;
   animation-play-state: paused;
 }
 
-/* This is the styling for the gradient shift positioning in the background animation, to make the background animation colors flow and look more like waves,
+/* Styling for the gradient shift positioning in the background animation, to make the background animation colors flow and look more like waves,
 creating a dynamic visual effect. */
 @keyframes gradientShift {
   0% {
@@ -337,7 +334,7 @@ footer {
   width: 100%;
 }
 
-/* This is styling for the dark background overlay that shows when you open the pop-up*/
+/* Dark background overlay that shows when you open the pop-up*/
 .popup {
   position: fixed;
   width: 100%;
@@ -348,7 +345,7 @@ footer {
   justify-content: center;
 }
 
-/* This is the styling to hide popup when not clicked */
+/* Styling to hide popup when not clicked */
 .hidden {
   display: none;
 }
@@ -362,7 +359,7 @@ footer {
   width: 500px;
 }
 
-/* The styling for the social media icons in the pop-up content, which are displayed in a row and
+/* Styling for the social media icons in the pop-up content, which are displayed in a row and
 have a hover effect to make them more interactive and visually appealing. */
 .popup-icons {
   display: flex;
