@@ -1,13 +1,15 @@
 const hoverClickButton = document.querySelector("#hoverclick-button");
 console.log(hoverClickButton);
-hoverClickButton.addEventListener("click", function () {
+hoverClickButton.addEventListener("click", gotoFLIP);
+
+function gotoFLIP() {
   location.href = "flip.html";
-});
+}
 
 const dragDropButton = document.querySelector("#dragdrop-button");
 console.log(dragDropButton);
 dragDropButton.addEventListener("click", function () {
-  location.href = "dragdrop.html";
+  location.href = "drag.html";
 });
 
 const multiDragDropButton = document.querySelector("#multidragdrop-button");
