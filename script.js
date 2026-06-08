@@ -21,19 +21,64 @@ postcard.addEventListener("click", () => {
 
 // Create draggable/flippable icons
 function spawnIcons() {
-  const iconsData = [["assets/img1-front.png", "assets/img1-back.png"]];
+  const iconsData = [
+    ["assets/img1-front.png", "assets/img1-back.png"],
+    ["assets/img2-front.png", "assets/img2-back.png"],
+  ];
+  console.log("spawning icon");
 
   iconsData.forEach((imgs, i) => {
     const icon = document.createElement("div");
     icon.classList.add("icon");
 
-    icon.style.left = `${50 + i * 80}px`;
-    icon.style.top = `${350 + Math.random() * 100}px`;
+    const iconSize = 200; // this value must match CSS Oda!
+    const padding = 20;
+
+    const maxX = window.innerWidth - iconSize - padding;
+    const maxY = window.innerHeight - iconSize - padding;
+
+    let x, y;
+
+    const card = postcard.getBoundingClientRect();
+
+    do {
+      x = padding + Math.random() * maxX;
+      y = padding + Math.random() * maxY;
+    } while (
+      x > card.left - iconSize &&
+      x < card.right + iconSize &&
+      y > card.top - iconSize &&
+      y < card.bottom + iconSize
+    );
+
+    // original function, but didn't work because icons kept spawning outside of the viewframe...
+    // const card = postcard.getBoundingClientRect();
+
+    // let x, y;
+
+    // // keep generating until outside postcard
+    // do {
+    //   x = Math.random() * window.innerWidth;
+    //   y = Math.random() * window.innerHeight;
+    // } while (
+    //   x > card.left &&
+    //   x < card.right &&
+    //   y > card.top &&
+    //   y < card.bottom
+    // );
+
+    // icon.style.left = `${x}px`;
+    // icon.style.top = `${y}px`;
+
+    icon.style.left = `${x}px`;
+    icon.style.top = `${y}px`;
 
     icon.innerHTML = `
-      <img class="front" src="${imgs[0]}"/>
-      <img class="back" src="${imgs[1]}"/>
-    `;
+  <div class="icon-inner">
+    <img class="front" src="${imgs[0]}"/>
+    <img class="back" src="${imgs[1]}"/>
+  </div>
+`;
 
     // Dragging
     let isDragging = false;
@@ -65,7 +110,7 @@ function spawnIcons() {
 
       currentIcon.style.cursor = "grab";
 
-      // ONLY drop check here
+      // ONLY drop here
       if (isInsidePostcard(currentIcon)) {
         currentIcon.remove();
       }
@@ -74,26 +119,27 @@ function spawnIcons() {
       currentIcon = null;
     });
 
+    // Check if icon is inside postcard area
+    function isInsidePostcard(icon) {
+      const card = postcard.getBoundingClientRect();
+      const rect = icon.getBoundingClientRect();
+
+      return (
+        rect.left > card.left &&
+        rect.right < card.right &&
+        rect.top > card.top &&
+        rect.bottom < card.bottom
+      );
+    }
+
     // Flip on double click
     let flipped = false;
     icon.addEventListener("dblclick", () => {
       flipped = !flipped;
-      icon.style.transform = flipped ? "rotateY(180deg)" : "rotateY(0deg)";
+      const inner = icon.querySelector(".icon-inner");
+      inner.style.transform = flipped ? "rotateY(180deg)" : "rotateY(0deg)";
     });
 
     iconContainer.appendChild(icon);
   });
-}
-
-// Check if icon is inside postcard area
-function isInsidePostcard(icon) {
-  const card = postcard.getBoundingClientRect();
-  const rect = icon.getBoundingClientRect();
-
-  return !(
-    rect.right < card.left ||
-    rect.left > card.right ||
-    rect.bottom < card.top ||
-    rect.top > card.bottom
-  );
 }
