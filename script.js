@@ -12,9 +12,11 @@ postcard.addEventListener("click", () => {
   opened = true;
 
   postcard.classList.add("open");
-  postcardImg.src = "assets/postcard-open.png";
 
-  spawnIcons();
+  // wait for postcard animation (3s delay + transition time)
+  setTimeout(() => {
+    spawnIcons();
+  }, 3000); // same delay as the postcard
 });
 
 // Create draggable/flippable icons
@@ -35,29 +37,41 @@ function spawnIcons() {
 
     // Dragging
     let isDragging = false;
-    let offsetX, offsetY;
+    let currentIcon = null;
+    let offsetX = 0;
+    let offsetY = 0;
 
     icon.addEventListener("mousedown", (e) => {
       isDragging = true;
-      offsetX = e.offsetX;
-      offsetY = e.offsetY;
+      currentIcon = icon;
+
+      const rect = icon.getBoundingClientRect();
+
+      offsetX = e.clientX - rect.left;
+      offsetY = e.clientY - rect.top;
+
       icon.style.cursor = "grabbing";
     });
 
     document.addEventListener("mousemove", (e) => {
-      if (!isDragging) return;
-      icon.style.left = `${e.pageX - offsetX}px`;
-      icon.style.top = `${e.pageY - offsetY}px`;
+      if (!isDragging || !currentIcon) return;
+
+      currentIcon.style.left = `${e.clientX - offsetX}px`;
+      currentIcon.style.top = `${e.clientY - offsetY}px`;
     });
 
     document.addEventListener("mouseup", () => {
-      isDragging = false;
-      icon.style.cursor = "grab";
+      if (!isDragging || !currentIcon) return;
 
-      // Drop into postcard detection
-      if (isInsidePostcard(icon)) {
-        icon.remove();
+      currentIcon.style.cursor = "grab";
+
+      // ONLY drop check here
+      if (isInsidePostcard(currentIcon)) {
+        currentIcon.remove();
       }
+
+      isDragging = false;
+      currentIcon = null;
     });
 
     // Flip on double click

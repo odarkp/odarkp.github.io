@@ -66,18 +66,40 @@ header {
   margin: auto;
   position: relative;
   cursor: pointer;
-  transition: transform 2.8s ease;
+
+  opacity: 1;
+
+  transition:
+    transform 2.8s ease,
+    opacity 2.8s ease;
+  transition-delay: 0s;
 }
 
 #postcard img {
+  position: absolute;
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transition: opacity 3s ease;
+}
+
+#postcardOpen {
+  opacity: 0;
+}
+
+#postcard.open #postcardOpen {
+  opacity: 1;
+}
+
+#postcard.open #postcardClosed {
+  opacity: 0;
 }
 
 #postcard.open {
   transform: scale(1);
   opacity: 0.8;
+
+  transition-delay: 3s;
 }
 
 #message {
