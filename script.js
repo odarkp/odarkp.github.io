@@ -30,6 +30,8 @@ function spawnIcons() {
     ["assets/img4-front.png", "assets/img4-front.png"],
     ["assets/img5-front.png", "assets/img5-front.png"],
     ["assets/img6-front.png", "assets/img6-front.png"],
+    ["assets/img7-front.png", "assets/img7-front.png"],
+    ["assets/img8-front.png", "assets/img8-front.png"],
   ];
   console.log("spawning icon");
   iconsRemaining = iconsData.length;
