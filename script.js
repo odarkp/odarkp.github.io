@@ -6,6 +6,8 @@ const iconContainer = document.getElementById("iconContainer");
 
 let opened = false;
 
+let iconsRemaining = 0;
+
 // Open postcard animation
 postcard.addEventListener("click", () => {
   if (opened) return;
@@ -24,8 +26,13 @@ function spawnIcons() {
   const iconsData = [
     ["assets/img1-front.png", "assets/img1-back.png"],
     ["assets/img2-front.png", "assets/img2-back.png"],
+    ["assets/img3-front.png", "assets/img3-front.png"],
+    ["assets/img4-front.png", "assets/img4-front.png"],
+    ["assets/img5-front.png", "assets/img5-front.png"],
+    ["assets/img6-front.png", "assets/img6-front.png"],
   ];
   console.log("spawning icon");
+  iconsRemaining = iconsData.length;
 
   iconsData.forEach((imgs, i) => {
     const icon = document.createElement("div");
@@ -33,6 +40,18 @@ function spawnIcons() {
 
     const iconSize = 200; // this value must match CSS Oda!
     const padding = 20;
+
+    // This if function is to create one of my icons (the photobooth one) bigger than the other icons,
+    // to make it more legible and enhance the user experience.
+    if (i === 1) {
+      icon.style.width = "300px";
+      icon.style.height = "300px";
+    }
+
+    if (i === 2 || i === 3 || i === 4) {
+      icon.style.width = "50px";
+      icon.style.height = "50px";
+    }
 
     const maxX = window.innerWidth - iconSize - padding;
     const maxY = window.innerHeight - iconSize - padding;
@@ -80,6 +99,14 @@ function spawnIcons() {
   </div>
 `;
 
+    // This functions closes the postcard after all icons have been dragged into it.
+    function closePostcard() {
+      // wait a moment so the player sees the last photo go in
+      setTimeout(() => {
+        postcard.classList.remove("open");
+      }, 1000);
+    }
+
     // Dragging
     let isDragging = false;
     let currentIcon = null;
@@ -113,6 +140,10 @@ function spawnIcons() {
       // ONLY drop here
       if (isInsidePostcard(currentIcon)) {
         currentIcon.remove();
+        iconsRemaining--;
+        if (iconsRemaining === 0) {
+          closePostcard();
+        }
       }
 
       isDragging = false;
