@@ -1,0 +1,198 @@
+/* This is the style.css file for the "My Exchange in Melbourne" website.
+It contains all the CSS styles for the website, including the layout, colors, fonts, and a background animation!
+The styles are organized into sections for the body, headers, paragraphs, container, buttons, media player, additional content, social icons, and footer. */
+
+:root {
+  --primary-bg-color: #f4f4f4;
+  --text-color: #260817;
+  --main-bg-color: #e372ff84;
+  --main-text-color: #fff;
+  --main-btn-bg-color: #fff;
+}
+
+body,
+h1,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* I made the body flex-container and set the flex-direction to column, so that the header, main content, and footer are arranged vertically.
+I also centered the body, to ensures that the layout is clean and organized, with clear separation between different sections of the website. */
+body {
+  font-family: cc-pixel-arcade-cartridge;
+  background-color: var(--primary-bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* I chose the different fonts because I wanted to create a fun and playful aesthetic for the website, which is fitting for a band.
+The "cc-pixel-arcade-cartridge" font gives a retro feel, while the "alta-california" font adds uniqueness.
+The combination of these fonts creates a memorable visual identity for the band, which can help to attract and engage fans, as well as it creates a visual hierarchy
+that makes it easier for users to navigate the website.*/
+h1 {
+  font-family: "cc-pixel-arcade-cartridge";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 0px;
+  padding: 0px;
+}
+
+h2 {
+  font-family: "cc-pixel-arcade-display";
+  font-size: small;
+  margin-top: 10px;
+}
+
+p {
+  margin-top: 15px;
+  font-family: monospace;
+  text-align: center;
+}
+
+/* Header styling */
+header {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+}
+
+/* Created a linear gradient background that shifts colors over time in sync with the video,
+creating a dynamic and visually engaging backdrop for the website. */
+body {
+  background: linear-gradient(
+    270deg,
+    #ffffff,
+    #eda6ff,
+    #a8b1ff,
+    #cb83ff,
+    #6f70cd,
+    #f3c1ff
+  );
+  background-size: 600% 600%;
+
+  /* Animation for the background gradient, which shifts the background colors over a time of 12s. */
+  animation: gradientShift 12s ease infinite;
+  animation-play-state: paused;
+}
+
+/* Styling for the gradient shift positioning in the background animation, to make the background animation colors flow and look more like waves,
+creating a dynamic visual effect. */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Main area styling */
+main {
+  position: relative;
+  width: 100vw;
+  height: 80vh;
+  overflow: hidden;
+}
+
+/* Postcard container styling */
+#postcard-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#postcard {
+  width: 500px;
+  cursor: pointer;
+
+  transition:
+    transform 2s ease,
+    opacity 2s ease;
+}
+
+/* Postcard open animation styling, which scales down the postcard and rotates it when clicked,
+creating a dynamic visual effect that enhances user interaction */
+.postcard-open {
+  transform: scale(0.2) rotate(-15deg);
+  opacity: 0;
+  animation: openCard 2s ease forwards;
+}
+
+/* Photo area styling */
+#photo-area {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* Photo-card styling, which sets the size, position, and transition properties for the photo cards,
+allowing them to be draggable and to have a smooth animation when they are moved or flipped.
+The transform-style: preserve-3d; property is important for enabling 3D transformations,
+which are used for the flip animation of the photo cards. */
+.photo-card {
+  width: 120px;
+  height: 120px;
+
+  position: absolute;
+
+  cursor: grab;
+
+  transform-style: preserve-3d;
+  transition:
+    transform 0.6s ease,
+    left 1.5s ease,
+    top 1.5s ease;
+}
+.photo-face {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  backface-visibility: hidden;
+
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Styling of the front face and back face of the photo cards */
+.photo-face img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+/* Styling of the flipped state of the photo cards */
+.flipped {
+  transform: rotateY(180deg);
+}
+
+/* Footer styling */
+footer {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px 0;
+  width: 100%;
+}
