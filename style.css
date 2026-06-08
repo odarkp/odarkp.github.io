@@ -126,12 +126,31 @@ main {
     opacity 2s ease;
 }
 
+#postcard:hover {
+  border: 10px solid red;
+}
+
 /* Postcard open animation styling, which scales down the postcard and rotates it when clicked,
 creating a dynamic visual effect that enhances user interaction */
 .postcard-open {
   transform: scale(0.2) rotate(-15deg);
   opacity: 0;
   animation: openCard 2s ease forwards;
+}
+@keyframes openCard {
+  0% {
+    transform: scale(1) rotateY(0deg);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(0.8) rotateY(-90deg);
+  }
+
+  100% {
+    transform: scale(0.2) rotateY(-180deg);
+    opacity: 0;
+  }
 }
 
 /* Photo area styling */

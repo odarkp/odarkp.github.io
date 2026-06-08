@@ -12,8 +12,8 @@ console.log(photoArea);
 // so that I can easily access them later when I want to display them on the website.
 const photos = [
   {
-    front: "images/photo1.png",
-    back: "images/photo1-back.png",
+    front: "photo1.png",
+    back: "photo1-back.png",
   },
   {
     front: "images/photo2.jpg",
@@ -74,7 +74,15 @@ function scatterPhotos() {
 }
 
 // Open postcard
+
+// postcard.addEventListener("click", function () {
+//   postcard.classList.add("postcard-open");
+
+//   scatterPhotos();
+// });
 postcard.addEventListener("click", function () {
+  console.log("POSTCARD CLICKED!");
+
   postcard.classList.add("postcard-open");
 
   scatterPhotos();
