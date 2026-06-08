@@ -1,0 +1,285 @@
+<!-- Hi! This is my submission for Assignment 2 for the Interactive Media course.
+I have created a media player website, focusing on the category "music video" with a custom video player and various controls.
+The website includes a header, navigation, main content with the media player, and a footer. I have also implemented a share popup,
+that allows users to share "The Band's" music on social media platforms.
+I have included three seperate HTML pages aswell: contact.html, about.html and socials.html. -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Band | Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Linking to the fonts I have used for the website. I focused on finding fonts that I believe fit the aesthetic of the music video,
+    to contribute to a cohesive and visually pleasing design. -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100..900;1,100..900&family=Tuffy:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/zfe7itu.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/ebv7egz.css" />
+
+    <!-- Linking to the CSS and JavaScript files for the website.
+    The CSS files include a reset stylesheet to ensure consistent styling across different browsers, and a custom stylesheet for the website's design.
+    The JavaScript file contains the functionality for the media player and other interactive elements on the website. -->
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header>
+      <h1>Media Player Website</h1>
+    </header>
+
+    <!-- Navigation Section - Added navigation links for the different pages to create a more interactive user experience,
+    as well as a share button that opens a share popup.-->
+    <nav>
+      <ul>
+        <li>
+          <button class="nav-button"><a href="index.html">Home</a></button>
+        </li>
+        <li>
+          <button class="nav-button"><a href="about.html">About</a></button>
+        </li>
+        <li>
+          <button class="nav-button"><a href="contact.html">Contact</a>
+          </button>
+        </li>
+        <li>
+          <button id="share-button" class="nav-button">
+            <img src="https://img.icons8.com/?size=100&id=Kq2hrI8NUpBY&format=png&color=000000"
+            alt="share-button"
+            width="24"
+            height="24">
+          </button>
+        </li>
+      </ul>
+    </nav>
+    
+    <h4>Hello, we are...</h4>
+    <h3>"The Band"</h3>
+    <h4>check out our latest music video!</h4>
+    <h4>Put your headphones on and stay awhile.</h4>
+
+    <!-- Main Content Section -->
+    <main class="container">
+
+      <!-- Media Player Section -->
+      <div class="media-player">
+        
+        <!-- To create a unique and visually appealing design for the website, I drew a vintage TV with Adobe Fresco, and used it as a frame for the video player. -->
+        <img src="vintageTV2.png" alt="vintage tv" class="tv-image" />
+        <video id="custom-video-player" class="tv-video" controls>
+          <source
+            src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4"
+            type="video/mp4"
+          />
+        </video>
+
+
+        <div class="custom-controls">
+        <!-- I added custom controls that fit the vintage TV, to create a cohesive, interactive and visually appealing design-->
+
+          <button id="replay-button" class="double-border">
+          <img
+            src="https://img.icons8.com/?size=100&id=1H593lDVpMEk&format=png&color=000000"
+            alt=""
+            id="replay-img"
+          />
+        </button>
+
+
+        <button id="mute-unmute-button" class="double-border">
+          <img
+            src="https://img.icons8.com/?size=100&id=dc6K5qHhfI1u&format=png&color=000000"
+            alt=""
+            id="mute-unmute-img"
+          />
+        </button>
+
+
+        <button id="low-volume-button" class="double-border">
+          <img
+            src="https://img.icons8.com/?size=100&id=HvbAce2HcdY1&format=png&color=000000"
+            alt=""
+            id="low-volume-img"
+          />
+        </button>
+
+
+        <button id="high-volume-button" class="double-border">
+          <img
+            src="https://img.icons8.com/?size=100&id=T1jM9CNlVKCy&format=png&color=000000"
+            alt=""
+            id="high-volume-img"
+          />
+        </button>
+
+
+                <button id="fast-forward-button" class="double-border">
+          <img
+            src="https://img.icons8.com/?size=100&id=HZQe6SNnTgFe&format=png&color=000000"
+            alt=""
+            id="fast-forward-img"
+          />
+        </button>
+
+
+        <button id="skip-to-end-button" class="double-border">
+          <img
+            src="https://img.icons8.com/?size=100&id=M3tZfmoHiYUd&format=png&color=000000"
+            alt=""
+            id="skip-to-end-img"
+          />
+        </button>
+
+
+         <button id="rewind-button" class="double-border">
+          <img
+            src="https://img.icons8.com/?size=100&id=SoCBx5RqAe5P&format=png&color=000000"
+            alt=""
+            id="rewind-img"
+          />
+        </button>
+
+
+        <button id="skip-to-start-button" class="double-border">
+          <img
+            src="https://img.icons8.com/?size=100&id=uBOxuKr9pvrF&format=png&color=000000"
+            alt=""
+            id="skip-to-start-img"
+          />
+        </button>
+
+        </div>
+
+        </div>
+     
+
+<div class="under-tv">
+
+  <!-- The "under-tv" class is a container for the controls that are placed under the vintage TV. Ensures a more organized and visually appealing layout. -->
+
+ <button id="play-pause-btn" onclick="togglePlayPause()">
+          <img
+            id="play-pause-img"
+            src="https://img.icons8.com/?size=100&id=KVmY50QrSUEu&format=png&color=000000"
+            alt="Play Button"
+            width="24"
+            height="24"
+          />
+        </button>
+
+        
+          <div class="progress-bar">
+          <span id="progress-bar-fill"></span>
+        </div>
+
+
+          <button id="fullscreen-button" class="double-border">
+          <img
+            src="https://img.icons8.com/?size=100&id=7KJN0U2tD3n7&format=png&color=000000"
+            alt=""
+            id="fullscreen-img"
+            width="24"
+            height="24"
+          />
+        </button>
+
+
+           <button id="heart-button" class="double-border">
+          <img
+            src="https://img.icons8.com/?size=100&id=sQxobwC94boi&format=png&color=000000"
+            alt=""
+            id="heart-img"
+            width="24"
+            height="24"
+          />
+        </button>
+
+
+         <div id="likes" class="like-count"></div>
+       
+      
+</div>
+
+
+      <!-- Additional Content Section -->
+      <section class="additional-content">
+
+
+        <h1>Curious for more? Check out our about page!</h1>
+
+
+        <button class="nav-button">
+            <a href="about.html">click me</a>
+          </button>
+
+      </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+      <h2>Assignment created by Oda Roenning Kraft-Pettersen (s4232439)</h2>
+      <p>&copy; 2024 Media Player Website. All rights reserved.</p>
+      <!-- <a href="https://icons8.com/icon/59862/play">Play</a> icon by
+      <a href="https://icons8.com">Icons8</a>
+      <a href="https://icons8.com/icon/61012/pause">Pause</a> icon by
+      <a href="https://icons8.com">Icons8</a> -->
+      <p><a> All Icons by </a><a href="https://icons8.com">Icons8</a></p>
+    </footer>
+
+
+    <!-- Share Popup Section - Contains the popup that appears when the user clicks the share button. -->
+<div id="share-popup" class="popup hidden">
+
+  <div class="popup-content">
+
+    <h1>Please share our music!</h1>
+
+
+    <div class="popup-icons">
+
+     <a href="socials.html" class="instagram">
+  <img
+    src="https://img.icons8.com/?size=100&id=yc2dJ0jTSu8L&format=png&color=000000"
+    alt="Instagram Icon"
+    width="100" 
+  />
+</a>
+
+<a href="socials.html" class="spotify">
+  <img
+    src="https://img.icons8.com/?size=100&id=bLhnvHtf8jQB&format=png&color=000000"
+    alt="Spotify Icon"
+    width="100"
+  />
+</a>
+
+<a href="socials.html" class="youtube">
+  <img
+    src="https://img.icons8.com/?size=100&id=uZIMz8rZqfcW&format=png&color=000000"
+    alt="YouTube Icon"
+    width="100"
+  />
+</a>
+
+<a href="socials.html" class="mail">
+  <img
+    src="https://img.icons8.com/?size=100&id=pRezTnlZ3Oab&format=png&color=000000"
+    alt="Mail Icon"
+    width="100"
+  />
+</a>
+    </div>
+    
+</div>
+
+
+  </body>
+</html>
