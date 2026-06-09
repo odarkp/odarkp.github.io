@@ -6,6 +6,7 @@ const iconContainer = document.getElementById("iconContainer");
 const instructions = document.getElementById("instructions");
 const thanksMessage = document.getElementById("thanksMessage");
 const thanksMessageDelay = document.getElementById("thanksMessageDelay");
+const stampButton = document.getElementById("stampButton");
 
 let opened = false;
 
@@ -21,42 +22,74 @@ postcard.addEventListener("click", () => {
   // wait for postcard animation (3s delay + transition time)
   setTimeout(() => {
     spawnIcons();
-  }, 3000); // same delay as the postcard
+  }, 5000); // same delay as the postcard
 
   // show instructions after postcard opens
   setTimeout(() => {
     instructions.classList.add("show");
-  }, 3500);
+  }, 5000);
 
   // hide instructions after 5 seconds
   setTimeout(() => {
     instructions.classList.remove("show");
-  }, 13500);
+  }, 15000);
+});
+
+// I added the function under so that the user can click the stamp button to reopen the postcard and revisit the photos,
+// which enhances the user experience by allowing them to interact with the postcard multiple times and not just once.
+stampButton.addEventListener("click", (e) => {
+  e.stopPropagation();
+  // Hide end-screen elements
+  thanksMessage.classList.remove("show");
+  thanksMessageDelay.classList.remove("show");
+  stampButton.classList.remove("show");
+
+  // Re-open postcard
+  postcard.classList.add("open");
+
+  // Remove any leftover icons
+  iconContainer.innerHTML = "";
+
+  // Recreate icons
+  setTimeout(() => {
+    spawnIcons();
+  }, 5000);
+
+  // Show instructions again
+  setTimeout(() => {
+    instructions.classList.add("show");
+  }, 5000);
+
+  setTimeout(() => {
+    instructions.classList.remove("show");
+  }, 10000);
 });
 
 // Create draggable/flippable icons
 function spawnIcons() {
+  iconContainer.innerHTML = "";
+
   const iconsData = [
     ["assets/img1-front.png", "assets/img1-back.png"],
-    // ["assets/img2-front.png", "assets/img2-back.png"],
-    // ["assets/img3-front.png", "assets/img3-front.png"],
-    // ["assets/img4-front.png", "assets/img4-front.png"],
-    // ["assets/img5-front.png", "assets/img5-front.png"],
-    // ["assets/img6-front.png", "assets/img6-front.png"],
-    // ["assets/img7-front.png", "assets/img7-front.png"],
-    // ["assets/img8-front.png", "assets/img8-front.png"],
-    // ["assets/img9-front.png", "assets/img9-back.png"],
-    // ["assets/img10-front.png", "assets/img10-back.png"],
-    // ["assets/img11-front.png", "assets/img11-back.png"],
-    // ["assets/img12-front.png", "assets/img12-back.png"],
-    // ["assets/img13-front.png", "assets/img13-back.png"],
-    // ["assets/img14-front.png", "assets/img14-back.png"],
-    // ["assets/img15-front.png", "assets/img15-back.png"],
-    // ["assets/img16-front.png", "assets/img16-back.png"],
-    // ["assets/img17-front.png", "assets/img17-back.png"],
-    // ["assets/img18-front.png", "assets/img18-back.png"],
-    // ["assets/img19-front.png", "assets/img19-back.png"],
-    // ["assets/img20-front.png", "assets/img20-back.png"],
+    ["assets/img2-front.png", "assets/img2-back.png"],
+    ["assets/img3-front.png", "assets/img3-front.png"],
+    ["assets/img4-front.png", "assets/img4-front.png"],
+    ["assets/img5-front.png", "assets/img5-front.png"],
+    ["assets/img6-front.png", "assets/img6-front.png"],
+    ["assets/img7-front.png", "assets/img7-front.png"],
+    ["assets/img8-front.png", "assets/img8-front.png"],
+    ["assets/img9-front.png", "assets/img9-back.png"],
+    ["assets/img10-front.png", "assets/img10-back.png"],
+    ["assets/img11-front.png", "assets/img11-back.png"],
+    ["assets/img12-front.png", "assets/img12-back.png"],
+    ["assets/img13-front.png", "assets/img13-back.png"],
+    ["assets/img14-front.png", "assets/img14-back.png"],
+    ["assets/img15-front.png", "assets/img15-back.png"],
+    ["assets/img16-front.png", "assets/img16-back.png"],
+    ["assets/img17-front.png", "assets/img17-back.png"],
+    ["assets/img18-front.png", "assets/img18-back.png"],
+    ["assets/img19-front.png", "assets/img19-back.png"],
+    ["assets/img20-front.png", "assets/img20-back.png"],
   ];
   console.log("spawning icon");
   iconsRemaining = iconsData.length;
@@ -66,6 +99,26 @@ function spawnIcons() {
   // spawning on top of an existing icon, and if it is, it will generate a new position.
   // The const variable under implements this in my code.
   const placedPositions = [];
+
+  // This functions closes the postcard after all icons have been dragged into it.
+  function closePostcard() {
+    // here I am creating a delay so the user can see the last photo go in
+    setTimeout(() => {
+      postcard.classList.remove("open");
+
+      // this will show thank you AFTER closing of the postcard begins
+      thanksMessage.classList.add("show");
+
+      // This will show the stamp button at the same time as the thank you message,
+      //  so the user can click it to reopen the postcard and revisit the photos.
+      stampButton.classList.add("show");
+
+      // this will show another delayed message after the initial thank you message.
+      setTimeout(() => {
+        thanksMessageDelay.classList.add("show");
+      }, 2000);
+    }, 5000);
+  }
 
   iconsData.forEach((imgs, i) => {
     const icon = document.createElement("div");
@@ -197,22 +250,6 @@ function spawnIcons() {
   </div>
 `;
 
-    // This functions closes the postcard after all icons have been dragged into it.
-    function closePostcard() {
-      // here I am creating a delay so the user can see the last photo go in
-      setTimeout(() => {
-        postcard.classList.remove("open");
-
-        // this will show thank you AFTER closing of the postcard begins
-        thanksMessage.classList.add("show");
-
-        // this will show another delayed message after the initial thank you message.
-        setTimeout(() => {
-          thanksMessageDelay.classList.add("show");
-        }, 2000);
-      }, 5000);
-    }
-
     // Dragging
     let isDragging = false;
     let currentIcon = null;
@@ -278,5 +315,9 @@ function spawnIcons() {
     });
 
     iconContainer.appendChild(icon);
+
+    setTimeout(() => {
+      icon.classList.add("show");
+    }, 50);
   });
 }
