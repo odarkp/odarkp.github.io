@@ -6,9 +6,63 @@ console.log("script loaded");
 const postcard = document.querySelector("#postcard");
 console.log(postcard);
 
+// Open postcard
+let opened = false;
+
+postcard.addEventListener("click", () => {
+  if (opened) return;
+  opened = true;
+
+  postcard.classList.add("postcard-open");
+
+  setTimeout(() => {
+    scatterPhotos();
+    showMessage();
+  }, 800);
+});
+
 // I also need to get access to the photo area where the photos will be displayed.
 const photoArea = document.querySelector("#photo-area");
 console.log(photoArea);
+
+function showMessage() {
+  const msg = document.createElement("div");
+  msg.textContent =
+    "help me post all my memories to my family and friends back home";
+
+  msg.style.position = "absolute";
+  msg.style.top = "10%";
+  msg.style.left = "50%";
+  msg.style.transform = "translateX(-50%)";
+  msg.style.fontSize = "18px";
+  msg.style.textAlign = "center";
+  msg.style.maxWidth = "400px";
+  msg.style.opacity = "0";
+  msg.style.transition = "opacity 1.5s ease";
+
+  document.body.appendChild(msg);
+
+  requestAnimationFrame(() => {
+    msg.style.opacity = "1";
+  });
+}
+
+// Flip functionality
+function enableFlip(card) {
+  let clickCount = 0;
+  let clickTimer;
+
+  card.addEventListener("click", () => {
+    clickCount++;
+
+    clickTimer = setTimeout(() => {
+      if (clickCount === 2) {
+        card.classList.toggle("flipped");
+      }
+      clickCount = 0;
+    }, 250);
+  });
+}
 
 // then I will choose to use an array of objects to store the photos,
 // so that I can easily access them later when I want to display them on the website.
@@ -73,50 +127,6 @@ function scatterPhotos() {
 
     enableFlip(card);
     enableDrag(card);
-  });
-}
-
-// Open postcard
-let opened = false;
-
-postcard.addEventListener("click", () => {
-  if (opened) return;
-  opened = true;
-
-  postcard.classList.add("postcard-open");
-
-  setTimeout(() => {
-    scatterPhotos();
-    showMessage();
-  }, 800);
-});
-
-function showMessage() {
-  const msg = document.createElement("div");
-  msg.textContent =
-    "help me post all my memories to my family and friends back home";
-
-  msg.style.position = "absolute";
-  msg.style.top = "10%";
-  msg.style.left = "50%";
-  msg.style.transform = "translateX(-50%)";
-  msg.style.fontSize = "18px";
-  msg.style.textAlign = "center";
-  msg.style.maxWidth = "400px";
-  msg.style.opacity = "0";
-  msg.style.transition = "opacity 1.5s ease";
-
-  document.body.appendChild(msg);
-
-  requestAnimationFrame(() => {
-    msg.style.opacity = "1";
-  });
-}
-
-// Flip functionality
-function enableFlip(card) {
-  card.addEventListener("dblclick", function () {
-    card.classList.toggle("flipped");
   });
 }
 
