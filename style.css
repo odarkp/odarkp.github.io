@@ -3,9 +3,11 @@ It contains all the CSS styles for the website, including the layout, colors, fo
 The styles are organized into sections for the body, headers, paragraphs, container, buttons, media player, additional content, social icons, and footer. */
 
 :root {
-  --primary-bg-color: #e2ded2;
+  --primary-bg-color: #000000;
   --secondary-bg-color: #d2d0ae;
-  --text-color: #ff0000;
+  --text-color: #ffffff;
+  --secondary-text-color: #000000;
+  --instruction-text-color: #ff6a6a;
 }
 
 body {
@@ -30,24 +32,36 @@ main {
 }
 
 h1 {
-  font-family: arial, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 20px;
+  font-family: miller-display;
+  font-weight: 500;
+  font-style: large;
+  font-size: 30px;
   text-align: center;
   margin-top: 10px;
   padding: 0px;
 }
 
 h2 {
-  font-family: arial, sans-serif;
+  font-family: miller-display, serif;
+  font-size: small;
+  margin-top: 10px;
+}
+
+p {
+  font-family: felt-tip-roman, sans-serif;
+  font-size: large;
+  margin-top: 10px;
+}
+
+.instructions-font {
+  font-family: miller-display, serif;
   font-size: small;
   margin-top: 10px;
 }
 
 /* Header styling */
 header {
-  background-color: var(--secondary-bg-color);
+  background-color: var(--primary-bg-color);
   color: var(--text-color);
   padding: 0px 0;
   text-align: center;
@@ -105,17 +119,49 @@ header {
 
 #message {
   position: absolute;
-  top: 20px;
+  top: 380px;
   left: 10px;
   right: 10px;
   font-size: 14px;
   text-align: center;
   opacity: 0;
   transition: opacity 2.8s ease;
-  color: #333;
+  color: var(--secondary-text-color);
 }
 
 #postcard.open #message {
+  opacity: 1;
+}
+
+#instructions {
+  position: absolute;
+  top: 525px;
+  left: 10px;
+  right: 10px;
+  font-size: 14px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 2.8s ease;
+  color: var(--instruction-text-color);
+}
+
+#instructions.show {
+  opacity: 1;
+}
+
+#thanksMessage {
+  position: absolute;
+  top: 380px;
+  left: 10px;
+  right: 10px;
+  font-size: 14px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 2.8s ease;
+  color: var(--instruction-text-color);
+}
+
+#thanksMessage.show {
   opacity: 1;
 }
 
@@ -167,10 +213,10 @@ header {
 
 /* Footer styling */
 footer {
-  background-color: var(--secondary-bg-color);
+  background-color: var(--primary-bg-color);
   color: var(--text-color);
   text-align: center;
   margin-top: 20px;
-  padding: 0px 0;
+  padding: 10px 0;
   width: 100%;
 }

@@ -3,6 +3,8 @@ console.log("script loaded");
 const postcard = document.getElementById("postcard");
 const postcardImg = document.getElementById("postcardImg");
 const iconContainer = document.getElementById("iconContainer");
+const instructions = document.getElementById("instructions");
+const thanksMessage = document.getElementById("thanksMessage");
 
 let opened = false;
 
@@ -19,31 +21,51 @@ postcard.addEventListener("click", () => {
   setTimeout(() => {
     spawnIcons();
   }, 3000); // same delay as the postcard
+
+  // show instructions after postcard opens
+  setTimeout(() => {
+    instructions.classList.add("show");
+  }, 3500);
+
+  // hide instructions after 5 seconds
+  setTimeout(() => {
+    instructions.classList.remove("show");
+  }, 13500);
+
+  // show thanks message after postcard closes
+  setTimeout(() => {
+    thanksMessage.classList.add("show");
+  }, 3500);
+
+  // hide thanks message after 5 seconds
+  setTimeout(() => {
+    thanksMessage.classList.remove("show");
+  }, 13500);
 });
 
 // Create draggable/flippable icons
 function spawnIcons() {
   const iconsData = [
     ["assets/img1-front.png", "assets/img1-back.png"],
-    ["assets/img2-front.png", "assets/img2-back.png"],
-    ["assets/img3-front.png", "assets/img3-front.png"],
-    ["assets/img4-front.png", "assets/img4-front.png"],
-    ["assets/img5-front.png", "assets/img5-front.png"],
-    ["assets/img6-front.png", "assets/img6-front.png"],
-    ["assets/img7-front.png", "assets/img7-front.png"],
-    ["assets/img8-front.png", "assets/img8-front.png"],
-    ["assets/img9-front.png", "assets/img9-back.png"],
-    ["assets/img10-front.png", "assets/img10-back.png"],
-    ["assets/img11-front.png", "assets/img11-back.png"],
-    ["assets/img12-front.png", "assets/img12-back.png"],
-    ["assets/img13-front.png", "assets/img13-back.png"],
-    ["assets/img14-front.png", "assets/img14-back.png"],
-    ["assets/img15-front.png", "assets/img15-back.png"],
-    ["assets/img16-front.png", "assets/img16-back.png"],
-    ["assets/img17-front.png", "assets/img17-back.png"],
-    ["assets/img18-front.png", "assets/img18-back.png"],
-    ["assets/img19-front.png", "assets/img19-back.png"],
-    ["assets/img20-front.png", "assets/img20-back.png"],
+    // ["assets/img2-front.png", "assets/img2-back.png"],
+    // ["assets/img3-front.png", "assets/img3-front.png"],
+    // ["assets/img4-front.png", "assets/img4-front.png"],
+    // ["assets/img5-front.png", "assets/img5-front.png"],
+    // ["assets/img6-front.png", "assets/img6-front.png"],
+    // ["assets/img7-front.png", "assets/img7-front.png"],
+    // ["assets/img8-front.png", "assets/img8-front.png"],
+    // ["assets/img9-front.png", "assets/img9-back.png"],
+    // ["assets/img10-front.png", "assets/img10-back.png"],
+    // ["assets/img11-front.png", "assets/img11-back.png"],
+    // ["assets/img12-front.png", "assets/img12-back.png"],
+    // ["assets/img13-front.png", "assets/img13-back.png"],
+    // ["assets/img14-front.png", "assets/img14-back.png"],
+    // ["assets/img15-front.png", "assets/img15-back.png"],
+    // ["assets/img16-front.png", "assets/img16-back.png"],
+    // ["assets/img17-front.png", "assets/img17-back.png"],
+    // ["assets/img18-front.png", "assets/img18-back.png"],
+    // ["assets/img19-front.png", "assets/img19-back.png"],
+    // ["assets/img20-front.png", "assets/img20-back.png"],
   ];
   console.log("spawning icon");
   iconsRemaining = iconsData.length;
@@ -186,7 +208,7 @@ function spawnIcons() {
 
     // This functions closes the postcard after all icons have been dragged into it.
     function closePostcard() {
-      // wait a moment so the player sees the last photo go in
+      // here I am creating a delay so the user can see the last photo go in
       setTimeout(() => {
         postcard.classList.remove("open");
       }, 1000);
