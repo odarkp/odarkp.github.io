@@ -55,15 +55,15 @@ header {
 }
 
 #scene {
-  width: 100vw;
-  height: 100vh;
+  width: 1%;
+  height: 1%;
   position: relative;
 }
 
 #postcard {
-  width: 800px;
-  height: 600px;
-  margin: auto;
+  width: 700px;
+  height: 500px;
+  margin: -1000px;
   position: relative;
   z-index: 5;
   cursor: pointer;
@@ -125,6 +125,7 @@ header {
   z-index: 9999;
   width: 200px;
   height: 200px;
+  margin: auto;
   cursor: grab;
   user-select: none;
   -webkit-user-drag: none;
@@ -136,6 +137,7 @@ header {
   width: 100%;
   height: 100%;
   position: absolute;
+  margin: auto;
   backface-visibility: hidden;
   object-fit: contain;
   pointer-events: none;

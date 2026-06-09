@@ -48,6 +48,12 @@ function spawnIcons() {
   console.log("spawning icon");
   iconsRemaining = iconsData.length;
 
+  // When the icons spawn on my webpage, they tend to overlap each other, which is not ideal for the user experience.
+  // Therefore I am creating an array to store the positions of the icons, and then I will check if the new icon is
+  // spawning on top of an existing icon, and if it is, it will generate a new position.
+  // The const variable under implements this in my code.
+  const placedPositions = [];
+
   iconsData.forEach((imgs, i) => {
     const icon = document.createElement("div");
     icon.classList.add("icon");
@@ -78,17 +84,59 @@ function spawnIcons() {
 
     const side = i < iconsData.length / 2 ? "left" : "right";
 
-    if (side === "left") {
-      x = padding + Math.random() * (card.left - iconSize - padding);
-    } else {
-      x =
-        card.right +
-        padding +
-        Math.random() *
-          (window.innerWidth - card.right - iconSize - padding * 2);
+    let attempts = 0;
+    let validPosition = false;
+
+    while (!validPosition && attempts < 100) {
+      attempts++;
+
+      if (side === "left") {
+        x = padding + Math.random() * (card.left - iconSize - padding);
+      } else {
+        x =
+          card.right +
+          padding +
+          Math.random() *
+            (window.innerWidth - card.right - iconSize - padding * 2);
+      }
+
+      y = padding + Math.random() * (maxY - padding);
+
+      validPosition = true;
+
+      for (const pos of placedPositions) {
+        const dx = x - pos.x;
+        const dy = y - pos.y;
+
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        // In this code, this if function is important as it determines the distance between the icons,
+        // so I can easily adjust it by tweaking the value.
+        if (distance < 100) {
+          validPosition = false;
+          break;
+        }
+      }
     }
 
-    y = padding + Math.random() * (maxY - padding);
+    placedPositions.push({ x, y });
+
+    // The code under is my "almost perfect" code for the even scattering of the icons,
+    // but it still makes the icons overlap eachother a lot,so I will attemt to reduce
+    // this overlapping with a new code over.
+    // const side = i < iconsData.length / 2 ? "left" : "right";
+
+    // if (side === "left") {
+    //   x = padding + Math.random() * (card.left - iconSize - padding);
+    // } else {
+    //   x =
+    //     card.right +
+    //     padding +
+    //     Math.random() *
+    //       (window.innerWidth - card.right - iconSize - padding * 2);
+    // }
+
+    // y = padding + Math.random() * (maxY - padding);
 
     // The code under is my second attempt at scattering the icons, which worked better than the original one,
     // but it scattered most of the icons on the left side of the postcard, so I wanted to implement a new code
