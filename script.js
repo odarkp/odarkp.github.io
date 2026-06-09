@@ -32,6 +32,18 @@ function spawnIcons() {
     ["assets/img6-front.png", "assets/img6-front.png"],
     ["assets/img7-front.png", "assets/img7-front.png"],
     ["assets/img8-front.png", "assets/img8-front.png"],
+    ["assets/img9-front.png", "assets/img9-back.png"],
+    ["assets/img10-front.png", "assets/img10-back.png"],
+    ["assets/img11-front.png", "assets/img11-back.png"],
+    ["assets/img12-front.png", "assets/img12-back.png"],
+    ["assets/img13-front.png", "assets/img13-back.png"],
+    ["assets/img14-front.png", "assets/img14-back.png"],
+    ["assets/img15-front.png", "assets/img15-back.png"],
+    ["assets/img16-front.png", "assets/img16-back.png"],
+    ["assets/img17-front.png", "assets/img17-back.png"],
+    ["assets/img18-front.png", "assets/img18-back.png"],
+    ["assets/img19-front.png", "assets/img19-back.png"],
+    ["assets/img20-front.png", "assets/img20-back.png"],
   ];
   console.log("spawning icon");
   iconsRemaining = iconsData.length;
@@ -40,17 +52,19 @@ function spawnIcons() {
     const icon = document.createElement("div");
     icon.classList.add("icon");
 
-    const iconSize = 200; // this value must match CSS Oda!
+    let iconSize = 200; // this value must match CSS Oda!
     const padding = 20;
 
     // This if function is to create one of my icons (the photobooth one) bigger than the other icons,
     // to make it more legible and enhance the user experience.
     if (i === 1) {
+      iconSize = 300;
       icon.style.width = "300px";
       icon.style.height = "300px";
     }
 
     if (i === 2 || i === 3 || i === 4) {
+      iconSize = 50;
       icon.style.width = "50px";
       icon.style.height = "50px";
     }
@@ -62,15 +76,36 @@ function spawnIcons() {
 
     const card = postcard.getBoundingClientRect();
 
-    do {
-      x = padding + Math.random() * maxX;
-      y = padding + Math.random() * maxY;
-    } while (
-      x > card.left - iconSize &&
-      x < card.right + iconSize &&
-      y > card.top - iconSize &&
-      y < card.bottom + iconSize
-    );
+    const side = i < iconsData.length / 2 ? "left" : "right";
+
+    if (side === "left") {
+      x = padding + Math.random() * (card.left - iconSize - padding);
+    } else {
+      x =
+        card.right +
+        padding +
+        Math.random() *
+          (window.innerWidth - card.right - iconSize - padding * 2);
+    }
+
+    y = padding + Math.random() * (maxY - padding);
+
+    // The code under is my second attempt at scattering the icons, which worked better than the original one,
+    // but it scattered most of the icons on the left side of the postcard, so I wanted to implement a new code
+    // // that evenly distributes the icons on the screen.
+    // let x, y;
+
+    // const card = postcard.getBoundingClientRect();
+
+    // do {
+    //   x = padding + Math.random() * maxX;
+    //   y = padding + Math.random() * maxY;
+    // } while (
+    //   x > card.left - iconSize &&
+    //   x < card.right + iconSize &&
+    //   y > card.top - iconSize &&
+    //   y < card.bottom + iconSize
+    // );
 
     // original function, but didn't work because icons kept spawning outside of the viewframe...
     // const card = postcard.getBoundingClientRect();
