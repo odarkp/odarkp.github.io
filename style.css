@@ -7,7 +7,7 @@ The styles are organized into sections for the body, headers, paragraphs, contai
   --secondary-bg-color: #d2d0ae;
   --text-color: #ffffff;
   --secondary-text-color: #000000;
-  --instruction-text-color: #ff6a6a;
+  --instruction-text-color: #faff98;
 }
 
 body {
@@ -151,18 +151,36 @@ header {
 
 #thanksMessage {
   position: absolute;
-  top: 380px;
+  top: 390px;
   left: 10px;
   right: 10px;
   font-size: 14px;
   text-align: center;
   opacity: 0;
   transition: opacity 2.8s ease;
-  color: var(--instruction-text-color);
+  color: var(--secondary-text-color);
 }
 
 #thanksMessage.show {
   opacity: 1;
+  transition-delay: 2.8s;
+}
+
+#thanksMessageDelay {
+  position: absolute;
+  top: 420px;
+  left: 10px;
+  right: 10px;
+  font-size: 14px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 2.8s ease;
+  color: var(--secondary-text-color);
+}
+
+#thanksMessageDelay.show {
+  opacity: 1;
+  transition-delay: 2.8s;
 }
 
 .icon {

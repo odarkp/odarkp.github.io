@@ -5,6 +5,7 @@ const postcardImg = document.getElementById("postcardImg");
 const iconContainer = document.getElementById("iconContainer");
 const instructions = document.getElementById("instructions");
 const thanksMessage = document.getElementById("thanksMessage");
+const thanksMessageDelay = document.getElementById("thanksMessageDelay");
 
 let opened = false;
 
@@ -30,16 +31,6 @@ postcard.addEventListener("click", () => {
   // hide instructions after 5 seconds
   setTimeout(() => {
     instructions.classList.remove("show");
-  }, 13500);
-
-  // show thanks message after postcard closes
-  setTimeout(() => {
-    thanksMessage.classList.add("show");
-  }, 3500);
-
-  // hide thanks message after 5 seconds
-  setTimeout(() => {
-    thanksMessage.classList.remove("show");
   }, 13500);
 });
 
@@ -211,7 +202,15 @@ function spawnIcons() {
       // here I am creating a delay so the user can see the last photo go in
       setTimeout(() => {
         postcard.classList.remove("open");
-      }, 1000);
+
+        // this will show thank you AFTER closing of the postcard begins
+        thanksMessage.classList.add("show");
+
+        // this will show another delayed message after the initial thank you message.
+        setTimeout(() => {
+          thanksMessageDelay.classList.add("show");
+        }, 2000);
+      }, 5000);
     }
 
     // Dragging
