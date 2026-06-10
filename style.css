@@ -124,7 +124,7 @@ header {
   transform: scale(1);
   opacity: 1;
 
-  transition-delay: 20s;
+  transition-delay: 10s;
 }
 
 #message {
@@ -147,7 +147,7 @@ header {
 
 #instructions {
   position: absolute;
-  top: 515px;
+  top: 495px;
   left: 10px;
   right: 10px;
   font-size: 14px;

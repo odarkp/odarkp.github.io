@@ -123,7 +123,7 @@ function spawnIcons() {
       setTimeout(() => {
         thanksMessageDelay.classList.add("show");
       }, 2000);
-    }, 5000);
+    }, 2000);
   }
 
   // The function under loops through each image pair (front+back) and creates one draggable icon.
