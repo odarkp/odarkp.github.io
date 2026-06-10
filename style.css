@@ -3,20 +3,21 @@ It contains all the CSS styles for the website, including the layout, colors, fo
 The styles are organized into sections for the body, headers, paragraphs, container, buttons, media player, additional content, social icons, and footer. */
 
 :root {
-  --primary-bg-color: #000000;
+  --primary-bg-color: #181818;
   --secondary-bg-color: #d2d0ae;
   --text-color: #ffffff;
-  --secondary-text-color: #000000;
+  --secondary-text-color: #181818;
   --instruction-text-color: #ff98f3;
 }
 
 body {
   margin: 0;
-  /* Added a free liscence background image from Adobe Stock to match the visual identity of my chosen website. */
-  background-image: url(assets/blackpaper_bg.png);
+  /* Added a background image with paper texture to match the visual identity of my chosen website. */
+  background-image: url(assets/blackpaper_bg2.png);
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
+  /* background-color: var(--primary-bg-color); */
   overflow-x: hidden;
   overflow-y: auto;
   font-family: Arial, sans-serif;
@@ -142,7 +143,7 @@ header {
 
 #instructions {
   position: absolute;
-  top: 530px;
+  top: 515px;
   left: 10px;
   right: 10px;
   font-size: 14px;
@@ -298,4 +299,8 @@ footer {
   margin-top: 20px;
   padding: 10px 0;
   width: 100%;
+}
+
+a {
+  color: var(--instruction-text-color);
 }
