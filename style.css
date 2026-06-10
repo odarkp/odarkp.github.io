@@ -1,6 +1,6 @@
 /* This is the style.css file for the "My Exchange in Melbourne" website.
-It contains all the CSS styles for the website, including the layout, colors, fonts, and a background animation!
-The styles are organized into sections for the body, headers, paragraphs, container, buttons, media player, additional content, social icons, and footer. */
+It contains all the CSS styles for the website, including the layout, colors, fonts, header, footer, postcard and text transitions, and hover functions!
+The styles are organized into sections for the body, main, headers, paragraphs, messages, container, scene, buttons, and footer. */
 
 :root {
   --primary-bg-color: #181818;
@@ -12,7 +12,7 @@ The styles are organized into sections for the body, headers, paragraphs, contai
 
 body {
   margin: 0;
-  /* Added a background image with paper texture to match the visual identity of my chosen website. */
+  /* Added a background image with paper texture that I edited myself in Adobe Photoshop to match the visual identity of my chosen website. */
   background-image: url(assets/blackpaper_bg2.png);
   background-size: cover;
   background-position: center top;
@@ -66,7 +66,7 @@ p {
 
 /* Header styling */
 header {
-  background-color: none;
+  background-color: transparent;
   color: var(--text-color);
   margin-top: 50px;
   padding: 0px 0;
@@ -90,6 +90,9 @@ header {
 
   opacity: 1;
 
+  /* I added a fade in transition of the postcard opening and a fade out transition to make the flow of the website more calm and easy on the eyes
+  to ensure a good user experience. I have done the same for all the text and messages that pop up on the website, as you can see under with
+  #message, #instructions, #thanksMessage, #thanksMessageDelay, #icons and #stampButton.*/
   transition:
     transform 2.8s ease,
     opacity 2.8s ease;
@@ -104,6 +107,7 @@ header {
   transition: opacity 3s ease;
 }
 
+/* The styles under create the fade in/out transitions. */
 #postcardOpen {
   opacity: 0;
 }
@@ -281,6 +285,8 @@ header {
   transform: translateX(-50%) scale(1.05);
 }
 
+/* I created a glow animation effect based on drop shadows, because I wanted to emphasise that the stamp is a clickable element,
+to ensure a more intuitive user experience. */
 @keyframes stampGlow {
   from {
     filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.3));
@@ -293,7 +299,7 @@ header {
 
 /* Footer styling */
 footer {
-  background-color: none;
+  background-color: transparent;
   color: var(--text-color);
   text-align: center;
   margin-top: 20px;

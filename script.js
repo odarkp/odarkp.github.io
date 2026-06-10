@@ -1,35 +1,38 @@
+// First of all, I created an initial console.log, to ensure that my Javascript file has loaded correctly.
 console.log("script loaded");
 
+// Then I need to get access to the all the elements I wish to include in the website, so I will use const variables.
 const postcard = document.getElementById("postcard");
-const postcardImg = document.getElementById("postcardImg");
 const iconContainer = document.getElementById("iconContainer");
 const instructions = document.getElementById("instructions");
 const thanksMessage = document.getElementById("thanksMessage");
 const thanksMessageDelay = document.getElementById("thanksMessageDelay");
 const stampButton = document.getElementById("stampButton");
 
+// The let under tracks whether the postcard has already been opened or not, to prevent the opening animation from running multiple times.
 let opened = false;
 
+//  The let under tracks how many icons are left to post before the postcard can close.
 let iconsRemaining = 0;
 
-// Open postcard animation
+// This eventlistener opens the postcard when it is clicked and starts the website experience.
 postcard.addEventListener("click", () => {
   if (opened) return;
   opened = true;
 
   postcard.classList.add("open");
 
-  // wait for postcard animation (3s delay + transition time)
+  // setTimeout creates a delay for the transitions of my website's elements.
   setTimeout(() => {
     spawnIcons();
-  }, 5000); // same delay as the postcard
+  }, 5000); // (same delay as the postcard)
 
-  // show instructions after postcard opens
+  // This function shows instructions after the postcard opens.
   setTimeout(() => {
     instructions.classList.add("show");
   }, 5000);
 
-  // hide instructions after 5 seconds
+  // This function hides the instructions after 10 seconds.
   setTimeout(() => {
     instructions.classList.remove("show");
   }, 15000);
@@ -38,24 +41,25 @@ postcard.addEventListener("click", () => {
 // I added the function under so that the user can click the stamp button to reopen the postcard and revisit the photos,
 // which enhances the user experience by allowing them to interact with the postcard multiple times and not just once.
 stampButton.addEventListener("click", (e) => {
+  // The code right under prevents the click eventlistener from also triggering the postcard click event underneath.
   e.stopPropagation();
-  // Hide end-screen elements
+  // This hides end-screen elements.
   thanksMessage.classList.remove("show");
   thanksMessageDelay.classList.remove("show");
   stampButton.classList.remove("show");
 
-  // Re-open postcard
+  // Re-opens postcard.
   postcard.classList.add("open");
 
-  // Remove any leftover icons
+  // Doublechecks and removes any leftover icons.
   iconContainer.innerHTML = "";
 
-  // Recreate icons
+  // Recreates the icons.
   setTimeout(() => {
     spawnIcons();
   }, 5000);
 
-  // Show instructions again
+  // Shows instructions again.
   setTimeout(() => {
     instructions.classList.add("show");
   }, 5000);
@@ -65,10 +69,11 @@ stampButton.addEventListener("click", (e) => {
   }, 10000);
 });
 
-// Create draggable/flippable icons
+// The funtion under creates the draggable/flippable icons.
 function spawnIcons() {
   iconContainer.innerHTML = "";
 
+  // The const variable under lets me easily delete, modify and add new icons to the list.
   const iconsData = [
     ["assets/img1-front.png", "assets/img1-back.png"],
     ["assets/img2-front.png", "assets/img2-back.png"],
@@ -102,24 +107,26 @@ function spawnIcons() {
 
   // This functions closes the postcard after all icons have been dragged into it.
   function closePostcard() {
-    // here I am creating a delay so the user can see the last photo go in
+    // Here I am creating a delay so the user can see the last photo go in.
     setTimeout(() => {
       postcard.classList.remove("open");
 
-      // this will show thank you AFTER closing of the postcard begins
+      // This function will show the thank you message after closing of the postcard begins.
       thanksMessage.classList.add("show");
 
       // This will show the stamp button at the same time as the thank you message,
-      //  so the user can click it to reopen the postcard and revisit the photos.
+      // so the user can click it to reopen the postcard and revisit the photos.
       stampButton.classList.add("show");
 
-      // this will show another delayed message after the initial thank you message.
+      // This will show another delayed message after the initial thank you message.
+      // I am creating this delayed effect so the reading experience is also easier.
       setTimeout(() => {
         thanksMessageDelay.classList.add("show");
       }, 2000);
     }, 5000);
   }
 
+  // The function under loops through each image pair (front+back) and creates one draggable icon.
   iconsData.forEach((imgs, i) => {
     const icon = document.createElement("div");
     icon.classList.add("icon");
@@ -135,11 +142,18 @@ function spawnIcons() {
       icon.style.height = "300px";
     }
 
+    //  This if function is to create the letter beads smaller than the other icons.
     if (i === 2 || i === 3 || i === 4) {
       iconSize = 50;
       icon.style.width = "50px";
       icon.style.height = "50px";
     }
+
+    // When working on the spawnIcons code I faced a lot of problems, such as: icons kept overlapping, icons kept spawning outside of the viewframe,
+    // and most of the icons kept spawning in the same area on my webpage. I had to make multiple attempts to resolve these issues to ensure a smooth UX and clean UI,
+    // however because of the limitations to my knowledge of code, I used AI as a tool. I acknowledge the use of AI in this project to help me solve the problems I faced
+    // while developing the code for the spawning of the icons. Although I chose to use AI in this part of my development process, I still made sure that I completely
+    // understood the code suggestions it was giving me, so I could learn in the process.
 
     const maxX = window.innerWidth - iconSize - padding;
     const maxY = window.innerHeight - iconSize - padding;
@@ -148,11 +162,14 @@ function spawnIcons() {
 
     const card = postcard.getBoundingClientRect();
 
+    // This const variable places half of the icons I have on each side of the postcard, ensuring a more balanced layout, and solving my problem where most of the icons
+    // tend to spawn on one side of the postcard.
     const side = i < iconsData.length / 2 ? "left" : "right";
 
     let attempts = 0;
     let validPosition = false;
 
+    // The function under solves my problem of heavily overlapping icons, where it keeps generating random positions (up to 100), and then stops when it finds a valid position for the icon.
     while (!validPosition && attempts < 100) {
       attempts++;
 
@@ -187,59 +204,6 @@ function spawnIcons() {
 
     placedPositions.push({ x, y });
 
-    // The code under is my "almost perfect" code for the even scattering of the icons,
-    // but it still makes the icons overlap eachother a lot,so I will attemt to reduce
-    // this overlapping with a new code over.
-    // const side = i < iconsData.length / 2 ? "left" : "right";
-
-    // if (side === "left") {
-    //   x = padding + Math.random() * (card.left - iconSize - padding);
-    // } else {
-    //   x =
-    //     card.right +
-    //     padding +
-    //     Math.random() *
-    //       (window.innerWidth - card.right - iconSize - padding * 2);
-    // }
-
-    // y = padding + Math.random() * (maxY - padding);
-
-    // The code under is my second attempt at scattering the icons, which worked better than the original one,
-    // but it scattered most of the icons on the left side of the postcard, so I wanted to implement a new code
-    // // that evenly distributes the icons on the screen.
-    // let x, y;
-
-    // const card = postcard.getBoundingClientRect();
-
-    // do {
-    //   x = padding + Math.random() * maxX;
-    //   y = padding + Math.random() * maxY;
-    // } while (
-    //   x > card.left - iconSize &&
-    //   x < card.right + iconSize &&
-    //   y > card.top - iconSize &&
-    //   y < card.bottom + iconSize
-    // );
-
-    // original function, but didn't work because icons kept spawning outside of the viewframe...
-    // const card = postcard.getBoundingClientRect();
-
-    // let x, y;
-
-    // // keep generating until outside postcard
-    // do {
-    //   x = Math.random() * window.innerWidth;
-    //   y = Math.random() * window.innerHeight;
-    // } while (
-    //   x > card.left &&
-    //   x < card.right &&
-    //   y > card.top &&
-    //   y < card.bottom
-    // );
-
-    // icon.style.left = `${x}px`;
-    // icon.style.top = `${y}px`;
-
     icon.style.left = `${x}px`;
     icon.style.top = `${y}px`;
 
@@ -250,7 +214,7 @@ function spawnIcons() {
   </div>
 `;
 
-    // Dragging
+    // Here I am creating the code for dragging.
     let isDragging = false;
     let currentIcon = null;
     let offsetX = 0;
@@ -280,7 +244,7 @@ function spawnIcons() {
 
       currentIcon.style.cursor = "grab";
 
-      // ONLY drop here
+      // This function checks whether the icon has been dropped completely inside the postcard.
       if (isInsidePostcard(currentIcon)) {
         currentIcon.remove();
         iconsRemaining--;
@@ -293,7 +257,8 @@ function spawnIcons() {
       currentIcon = null;
     });
 
-    // Check if icon is inside postcard area
+    // This function doublechecks if icon has been completely dragged inside postcard area, and if true, the icon is removed and regarded as successfully
+    // added inside the postcard.
     function isInsidePostcard(icon) {
       const card = postcard.getBoundingClientRect();
       const rect = icon.getBoundingClientRect();
@@ -306,8 +271,9 @@ function spawnIcons() {
       );
     }
 
-    // Flip on double click
+    // This let variable tracks whether the icon is currently showing its front or back side.
     let flipped = false;
+    // Flips the icon on dblclick!
     icon.addEventListener("dblclick", () => {
       flipped = !flipped;
       const inner = icon.querySelector(".icon-inner");
@@ -316,6 +282,7 @@ function spawnIcons() {
 
     iconContainer.appendChild(icon);
 
+    // For finishing touches, I also made the icons slowly fade in so all the elements have the same transition effects.
     setTimeout(() => {
       icon.classList.add("show");
     }, 50);

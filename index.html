@@ -1,4 +1,8 @@
-<!-- Hi! This is my submission for Assignment 2 for the Interactive Media course. -->
+<!-- Hi! This is my submission for Assignment 3 for Interactive Media. In this project my chosen action is "drag&drop", and my chosen context is "My Exchange in Melbourne"!
+I have made an interactive website that includes pictures of my most valued memories from my exchange semester. The website acts as a memoir to my time in Melbourne,
+becoming a deeply personal and emotional platform for me to create. The website acts almost like a game, where the objective of the user is to collect all the 
+pictures and icons on the screen into the postcard, so they can help me post my memories to my friends and family back home. To make it even more personal, I made it so
+that when the user dblclicks the pictures, it flips around and reveals a message describing the time, place and context for the picture. -->
 
 <!doctype html>
 <html lang="en">
@@ -7,20 +11,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Exchange in Melbourne</title>
 
-    <!-- Linking to the fonts I have used for the website. I focused on finding fonts that I believe fit the aesthetic,
-    to contribute to a cohesive and visually pleasing design. I chose "Miller Display" as my header font,
-    because I wanted to use a font that is modern enough to fit a digital design, but also has handwritten characteristics,
-     like serifs. I chose "Felt Tip" as an alternative font to my own writing on the back of the icons,
-     as this typeface is very similar to my own writing. -->
+    <!-- Under I am linking the fonts I have used for the website.
+    I focused on finding fonts that I believe fit the aesthetic, to contribute to a cohesive and visually
+    pleasing design. I chose "Miller Display" as my header font, because I wanted to use a font that is modern enough to fit a digital design, but also has handwritten
+    characteristics, like serifs. I chose "Felt Tip" as an alternative font to my own writing on the back of the icons, as this typeface is very similar to my own writing. -->
     <link
       href="https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100..900;1,100..900&family=Tuffy:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://use.typekit.net/xsi6rqd.css" />
 
-    <!-- Linking to the CSS and JavaScript files for the website.
+    <!-- Under I am linking to the CSS and JavaScript files for the website.
     The CSS files include a reset stylesheet to ensure consistent styling across different browsers, and a custom stylesheet for the website's design.
-    The JavaScript file contains the functionality for the interactive icon elements on the website, as well as the postcard opening and closing transition. -->
+    The JavaScript file contains the functionality for the interactive icon elements on the website, as well as the postcard and text transitions. -->
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="reset.css" />
     <script src="script.js" defer></script>
@@ -33,7 +36,7 @@
     </header>
 
     <main>
-      <!-- Postcard -->
+      <!--In the main section I am adding all the divisions for my website's included elements. -->
       <div id="postcard">
         <img id="postcardClosed" src="assets/postcard-closed.png" />
         <img id="postcardOpen" src="assets/postcard-open.png" />
@@ -64,11 +67,12 @@
         </button>
       </div>
 
-      <!-- Photo icons appear here -->
+      <!-- Photo icons appear here in this container. -->
       <div id="iconContainer"></div>
     </main>
 
-    <!-- Footer Section -->
+    <!-- Footer Section: In the footer I am properly referencing where I got the images of the postcard/envelope, as well as the paper cutouts I edited on the background 
+    of my photo icons in Adobe Photoshop. All photos are properly licensed for educational use.-->
     <footer>
       <h2>
         Assignment created by Oda Roenning Kraft-Pettersen (s4232439) - All
